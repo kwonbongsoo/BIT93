@@ -1,0 +1,48 @@
+1498444782200	Delete element
+1498445344777	Delete element
+1498445368184	Delete element
+1498448912722	Copy file
+1498449157319	Copy file
+1498449174207	Copy file
+1498609685746	Move 'auth' to 'view'
+1498609802107	Move 'teacher' to 'view'
+1498609892908	Copy folder
+1498609942579	Delete element
+1498609945622	Delete element
+1498609950602	Delete elements
+1498610016541	Move 'footer.jsp' to 'view'
+1498610021554	Move 'corestyle.jsp' to 'view'
+1498610027666	Move 'error.jsp' to 'view'
+1498610223940	Move 'error.jsp' to 'WEB-INF'
+1498610253676	Move 'header.jsp' to 'view'
+1498613431096	Rename resource 'form.jsp'
+1498614010723	Delete element
+1498614025145	Rename type 'LoginControl'
+1498614991782	Rename type 'AutoControl'
+1498615952545	Delete element
+1498617381455	Delete element
+1498617387891	Delete element
+1498617528632	Delete element
+1498617911258	Rename type 'TeacherListControl'
+1498618339435	Delete element
+1498618565184	Copy file
+1498618575218	Rename resource 'form.html'
+1498618584935	Delete element
+1498618714734	Delete element
+1498706834883	Move compilation units
+1498706838382	Delete element
+1498706852348	Rename package 'gson'
+1498706860940	Delete element
+1498713917023	Copy file
+1498713939990	Copy file
+1498713961396	Rename resource 'json-servletxml'
+1498714288763	Delete element
+1498714295974	Copy file
+1498716522915	Copy compilation unit
+1498716552231	Delete element
+1498716728535	Delete elements
+1498716804104	Copy compilation unit
+1498728319285	Copy file
+1498728340216	Move 'userinfo.js' to 'js'
+1498728455141	Copy file
+1498728559091	Rename resource 'common.js'

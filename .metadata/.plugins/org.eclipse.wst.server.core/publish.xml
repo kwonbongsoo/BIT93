@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<publish-info>
+  <server id="bombee" path="publish0.dat"/>
+  <server id="minsub" path="publish2.dat"/>
+  <server id="spring web mvc test" path="publish1.dat"/>
+</publish-info>

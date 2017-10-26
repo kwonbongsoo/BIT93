@@ -1,0 +1,50 @@
+      @font-face {
+        font-family: "myfont"; /* 폰트 그룹명을 설정한다. */
+        src: url('icons.woff') format('woff')
+      }
+      body {
+        font-family: '맑은 고딕', '굴림체', 'Apple Gothic Neo', sans-serif;
+        font-size:medium;
+        padding: 10px;
+        margin: 0px;
+      }
+      #main {
+        position: relative;
+
+        width: 980px;
+        margin: 0 auto;
+      }
+      #menu {
+        font-size: 1em;
+          width: 200px;
+          position: absolute;
+
+
+          background-color: lightgray;
+
+
+      }/* 공백이있으면 싱글퍼테이션 씌운다
+      의미
+        => 맑으 ㄴ고딕 폰트를 사용하라. 없다면 다음 폰트를 사용하라
+        => 모두 없다면 웹브라우저에 설정된 sans-serif를 사용하라
+
+      */
+
+
+
+
+      #ad {
+        position: fixed;
+        left: 35%;
+        top: 20%;
+        /*border: 5px solid orange;*/
+      }
+      #ad > button {
+        background-color: red;
+        color: white;
+        border-style: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        cursor: pointer;
+      }

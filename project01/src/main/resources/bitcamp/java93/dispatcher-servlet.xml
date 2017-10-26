@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+
+    <!-- *.do 요청을 처리할 페이지 컨트롤러 생성 -->
+     <!-- 컴포넌트 자동스캔 -->
+    <context:component-scan base-package="bitcamp.java93.control">
+      <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+     </context:component-scan>
+    
+    <!-- web-inf 폴더 밑에 conf 폴더 만들고, 그 밑에 이파일 두고 -->
+    <!-- 자동으로 생성할 클래스의 패키지를 지정한다 -->
+    <!-- 자동으로 객체를 생성할 클래스가 있는 패키지를 지정한다
+    자동으로 객체를 생성하려면 그 클래스에 @Component 애노테이션이 붙어 있어야한다. -->
+    
+    <!--  -->
+    <mvc:annotation-driven/>  
+   
+   <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    <property name="prefix" value="/WEB-INF/view/"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>
+  
+  <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <!-- one of the properties available; the maximum file size in bytes -->
+    <property name="maxUploadSize" value="100000000"/>
+</bean>
+   
+</beans>

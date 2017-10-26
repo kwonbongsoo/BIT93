@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tomato/src/main/webapp/list/mainList3.html&apos; to &apos;mainList.html&apos;" description="Rename resource &apos;mainList3.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/list/mainList3.html" name="mainList.html" stamp="1500862485199" updateReferences="true"/>
+</session>

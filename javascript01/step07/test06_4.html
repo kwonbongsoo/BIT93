@@ -1,0 +1,37 @@
+<!DOCTYPE html> <!--  DOM API 사용법 -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+
+  </head>
+  <body>
+    <button id="btn1" type="button">버튼1</button>
+    <button id="btn2" type="button">버튼2</button>
+
+<script>
+/*리스너 제거하기
+
+*/
+  var btn1 = document.querySelector('#btn1');
+  var btn2 = document.querySelector('#btn2');
+  var btn1Click = function() {
+    console.log('11111111')
+  }
+
+
+btn1.addEventListener('click', btn1Click)
+btn2.onclick = function() {
+  btn1.removeEventListener('click', btn1Click)
+}
+
+/* 이것은 태그에서 onclick 속성으로 등록된 코드를 덮어쓴다. 하나밖에 안써진다 */
+
+
+
+</script>
+
+</body>

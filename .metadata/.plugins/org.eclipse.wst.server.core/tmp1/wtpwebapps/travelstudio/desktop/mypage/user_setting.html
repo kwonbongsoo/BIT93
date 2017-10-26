@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>header</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/mypage/user_setting.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+
+
+<!--header-->
+
+<!-- sign in-->
+
+<div class='header-container'></div>
+
+
+<div class="user-setting-container">
+<div>
+  <div class="user_photo_change">
+    <div class="user_img"></div>
+    <img id="file-up" src="/image/camera.png"></img>
+    <input type="file" id="fileupload" name="files" style="display:none" multiple></input>
+  </div>
+  
+  <div class="user_txt">
+  <p id="txt_alias">1</p>
+  <p id="txt_email">1</p>
+  </div>
+
+  <div class="user_setting_info">
+    <p id="title-name">표시이름</p>
+    <input type="text" id="name-input" placeholder="닉네임">
+    <p id="title-int">본인소개</p>
+    <input type="text" id="int-input" placeholder="간단한 자기 소개를 입력해 주세요">
+  </div>
+  
+    <div class="save_btn"><button type="button" id="save-btn">저장하기</button></div>
+</div>
+
+</div>
+<div class='footer-container'></div>
+
+
+
+<!--footer-->
+
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src='/node_modules/jquery/dist/jquery.js'></script>
+<script src="/node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script src="/node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="/node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+<script src="/node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+<script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="/js/mypage/user_setting.js"></script>
+
+
+
+<script>
+"use strict"
+
+$(document).ready(function() {
+	$("#file-up").click(function() {
+			$('#fileupload').click();
+			  
+	})
+})
+
+$("#file-up").removeAttr("href")
+</script>
+
+  </body>
+</html>

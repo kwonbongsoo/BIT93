@@ -1,0 +1,27 @@
+{
+  "name": "page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "consolidate": "^0.14.5",
+    "express": "^4.15.2",
+    "handlebars": "^4.0.8",
+    "jquery": "^1.12.4",
+    "mysql": "^2.13.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.4.0",
+    "connect-flash": "^0.1.1",
+    "express-session": "^1.15.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}

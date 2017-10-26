@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+
+  .container {
+    width: 600px;
+    margin: 0px auto;
+  }
+  <style>
+.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
+.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
+.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+</style>
+  </style>
+</head>
+
+<body>
+<div class="container">
+<h1>스터디 정보</h1>
+<form class="form-horizontal">
+  <div class="form-group bit-view">
+    <label class="col-sm-3 control-label">번호</label>
+    <div class="col-sm-6">
+      <p class="form-control-static" id="fi-no"></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-title" class="col-sm-3 control-label">스터디명</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control"
+            id="fi-title" placeholder="스터디명">
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="fi-mno" class="col-sm-3 control-label">작성자 이메일</label>
+    <div class="col-sm-7">
+      <input type="email" class="form-control"
+            id="fi-email" placeholder="메일주소(test@test.com)">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-content" class="col-sm-3 control-label">설명</label>
+    <div class="col-sm-7">
+      <textarea class="form-control"
+          id="fi-content" placeholder="스터디에 대해 상세 설명"
+          rows="4"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-start-date" class="col-sm-3 control-label">스터디 기간</label>
+    <div class="col-sm-4">
+      <input type="date" class="form-control"
+             id="fi-start-date" placeholder="시작일">
+      ~
+      <input type="date" class="form-control"
+             id="fi-end-date" placeholder="종료일">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-quantity" class="col-sm-3 control-label">모집 인원</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control"
+             id="fi-quantity" placeholder="최대 모집 인원">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-price" class="col-sm-3 control-label">벌칙요금</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control"
+             id="fi-price" placeholder="기본 벌칙요금">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-place" class="col-sm-3 control-label">위치</label>
+    <div class="col-sm-4">
+      <input type="text" id="fi-place" class="form-control" placeholder="수원캠/서울캠/타지역">
+
+    </div>
+  </div>
+
+  <div id="map" style="width:100%;height:350px;"></div>
+  <div id="clickLatlng"></div>
+
+  <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=	445f205d748a3d18c770512dfee12f55"></script>
+  <script>
+
+
+  </script>
+
+
+<br>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-10">
+      <button type="button" class="btn btn-primary bit-view" id="upd-btn">변경</button>
+      <button type="button" class="btn btn-primary bit-view" id="del-btn">삭제</button>
+      <button type="button" class="btn btn-primary bit-new" id="add-btn">추가</button>
+      <a href="study.html" class="btn btn-primary" id="lst-btn">목록</a>
+
+
+    </div>
+  </div>
+
+</form>
+</div>
+
+
+
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="view.js"></script>
+
+
+
+
+
+</body>
+</html>

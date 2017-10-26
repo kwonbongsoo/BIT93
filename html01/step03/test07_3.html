@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+    <style>
+    /* 배경 위치 조정(background-position)
+        => left/right top/bottom
+        => left top을 기준으로 위치 이동
+           -50px(왼쪽으로 50px 이동) 100px(아래로 100px 이동)
+              */
+    
+    div {
+      border: 10px solid #5f6;
+      padding: 20px;
+      width: 300px;
+      height: 100px;
+      margin: 10px;
+    }
+    #menu {
+      background-repeat:  repeat-x;
+      float: left;
+      background-image: url('image01.png');
+    }
+    #content {
+      background-image: url('image01.png');
+      float: left;
+      background-repeat:  repeat-y;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="menu">menu</div>
+    <div id="content">content</div>
+
+</body>
+</html>

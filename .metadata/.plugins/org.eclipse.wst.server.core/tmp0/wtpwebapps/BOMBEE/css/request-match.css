@@ -1,0 +1,211 @@
+/*iphone5*/
+@media (min-device-width: 320px) and (max-device-width: 374px) {
+  .request-list {
+    height: 55px;
+  }
+  .request-info {
+    height: 55px;
+  }
+  .smile-size {
+    height: 41.7px;
+
+  }
+  .trainer-img-size {
+    height: 41.7px;
+  }
+	.no-alram {
+		width: 84%;
+	}
+	.no-alram-size {
+		font-size: 2.5rem;
+	}
+	.no-alram-cont {
+		font-size: 1.5rem;
+		margin-top: 0.5%;
+	}
+}
+/*iphone6*/
+@media (min-device-width: 375px) and (max-device-width: 413px) {
+  .request-list {
+    height: 64px;
+  }
+  .request-info {
+    height: 64px;
+  }
+  .smile-size {
+    height: 48.7px;
+    line-height: 1.05;
+  }
+  .trainer-img-size {
+    height: 48.7px;
+  }
+	.no-alram {
+		width: 80%;
+	}
+	.no-alram-size {
+		font-size: 2.6rem;
+	}
+	.no-alram-cont {
+		font-size: 1.7rem;
+		margin-top: .5%;
+	}
+}
+/*iphone6 plus*/
+@media (min-device-width: 414px) and (max-device-width: 767px) {
+  .request-list {
+    height: 71px;
+  }
+  .request-info {
+  	height: 71px;
+  }
+  .smile-size {
+    height: 53.7px;
+  }
+  .trainer-img-size {
+    height: 53.7px;
+  }
+	.no-alram {
+		width: 77%;
+	}
+	.no-alram-size {
+		font-size: 3rem;
+	}
+	.no-alram-cont {
+		font-size: 1.8rem;
+		margin-top: 2%;
+	}
+}
+
+.trainer-img-size {
+	float: left;
+  width: 13%;
+  margin: 2%;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.smile-size {
+	float: left;
+  width: 13%;
+  margin: 2%;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 3.8rem;
+  text-align: center;
+}
+
+.trainer-img-size img {
+  width: 100%;
+  height: 100%;
+}
+.request-list {
+  position: relative;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.request-list:first-child {
+	margin-top: 1%;
+  width: 100%;
+  border: none;
+}
+
+.request-info {
+	position: relative;
+  width: 62%;
+	left: 18%;
+  border-bottom: 1px solid #eee;
+}
+
+.request-info .trainer-name,
+.request-info .request-date,
+.request-info .request-content,
+.request-info .wish-date,
+.request-info .wish-period {
+	position: absolute;
+}
+
+.request-info .trainer-name {
+  top: 10%;
+  font-weight: 800;
+  left: 0;
+}
+
+.request-date {
+	top: 12%;
+  right: 3%;
+  color: #777;
+  font-size: 1.3rem;
+
+}
+.request-content {
+  top: 42%;
+  left: 0;
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.wish-date {
+	color: #777;
+  top: 73%;
+  left: 0;
+  font-size: 1.3rem;
+}
+
+.wish-period {
+	color: #777;
+  top: 73%;
+  right: 3%;
+  font-size: 1.25rem;
+}
+
+.request-list .btn-form {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.request-list .cancle {
+  background-color: #ddd;
+  border-radius: 0;
+  color: #666;
+  float: left;
+  font-weight: 600;
+  height: 100%;
+  line-height: 4.5;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.no-alram {
+	color: #777;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-alram-cont {
+	float: right;
+  display: inline-block;
+}
+
+.request-content {
+	white-space: nowrap;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  overflow: hidden;
+  width: 94%;
+}

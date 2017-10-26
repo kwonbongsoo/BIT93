@@ -1,0 +1,83 @@
+1498448212614	Move 3 resources to 'java'
+1498448244584	Move 3 resources to 'src'
+1498448252009	Move 3 resources to 'main'
+1498448702738	Rename package 'springweb01.step01'
+1498449162410	Delete element
+1498454820275	Rename package 'step01'
+1498455005705	Copy compilation unit
+1498455454313	Copy compilation unit
+1498455646047	Copy compilation unit
+1498455952633	Copy compilation unit
+1498456516728	Copy compilation unit
+1498456574021	Move 'controller05.html' to 'WEB-INF'
+1498456581076	Move 'controller05.html' to 'webapp'
+1498456625952	Copy file
+1498456705833	Delete element
+1498457196039	Copy compilation unit
+1498457557769	Copy compilation unit
+1498457829060	Copy file
+1498460625984	Copy compilation unit
+1498460682677	Copy file
+1498462202649	Copy file
+1498462504184	Copy compilation unit
+1498462902933	Copy compilation unit
+1498465106015	Copy compilation unit
+1498526388833	Copy compilation unit
+1498528186395	Copy compilation unit
+1498528722039	Rename type 'MyWebBinderInitailizer'
+1498531730094	Copy compilation unit
+1498533890104	Copy file
+1498533909411	Rename resource 'controller15_ok4.jsp'
+1498534278859	Copy file
+1498534573893	Copy file
+1498540746051	Copy file
+1498540877260	Copy file
+1498541208784	Copy compilation unit
+1498541678756	Copy file
+1498541741695	Delete element
+1498541989981	Copy compilation unit
+1498542308712	Copy file
+1498543455182	Copy file
+1498543884173	Copy file
+1498543934291	Rename resource 'controller16_ok1_form2.html'
+1498543942385	Rename resource 'controller16_okw_form.html'
+1498545858675	Copy file
+1498545862888	Copy file
+1498546168627	Copy file
+1498548433442	Copy compilation unit
+1498548895789	Copy compilation unit
+1498549336623	Copy file
+1498549649869	Copy file
+1498549802910	Copy files
+1498549812474	Delete elements
+1498549816210	Delete element
+1498549892414	Copy compilation unit
+1498550122617	Copy file
+1498550213850	Copy file
+1498550673144	Copy file
+1498550893081	Copy file
+1498551196729	Copy compilation unit
+1498551319874	Copy file
+1498551524447	Copy file
+1498551528265	Delete element
+1498551534014	Copy compilation unit
+1498551760218	Copy file
+1498551766883	Copy file
+1498551773342	Copy file
+1498551778668	Copy file
+1498552206504	Copy compilation unit
+1498552407153	Delete element
+1498620786079	Copy compilation unit
+1498627164387	Rename type 'MyServcie'
+1498627390959	Copy file
+1498627481532	Copy file
+1498627486666	Copy file
+1498627491816	Copy file
+1498627498024	Copy file
+1498628475853	Copy compilation unit
+1498630809957	Rename type 'MyIntercepter'
+1498632762704	Rename type 'MyInterceptor'
+1498634454391	Copy compilation unit
+1498634560162	Delete element
+1498634576444	Copy compilation unit
+1498705446864	Copy compilation unit

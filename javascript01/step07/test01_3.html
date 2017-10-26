@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!--  DOM API 사용법 -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+
+  </head>
+  <body>
+
+    <div id="d1" class="c1">d1</div>
+    <div id="d2" class="c1">d2</div>
+    <div id="d3" class="c1">d3</div>
+    <div id="d4" class="c1">d4</div>
+    <div id="d5" class="c2">d5</div>
+    <div id="d6" class="c2">d6</div>
+    <div id="d7" class="c2">d7</div>
+    <div id="d8" class="c2">d8</div>
+
+<script>
+
+  var list = document.getElementsByClassName("c2");
+  console.log(list);
+
+  for( var i = 0; i < list.length; i++){
+    console.log(list[i]);
+  }
+
+</script>
+
+</body>

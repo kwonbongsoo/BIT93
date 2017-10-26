@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bitcamp.java93.dao.PromotionDao">
+
+  <resultMap type="promotion" id="promotionMap">
+        <id column="pno" property="pno" />
+        <result column="titl" property="title" />
+        <result column="pric" property="pric" />
+        <result column="content" property="content" />
+        <result column="sdt" property="sdt" />
+        <result column="edt" property="edt" />
+        <result column="tno" property="tno" />
+        <result column="spono" property="spono" />
+        <result column="COMADDR" property="comaddr" />
+        <result column="COMDETAILADDR" property="comdetailaddr" />
+        <result column="company" property="comname"/>
+        <result column="lat" property="lat"/>
+        <result column="lng" property="lng"/>
+        <result column="meter" property="meter"/>
+        <result column="name" property="name"/>
+        <result column="introduction" property="introduction"/>
+        <result column="pimg" property="titlePic"/>
+        <result column="tipic" property="tiPic"/>
+        <result column="expire" property="expire"/>
+    <collection property="promotionList" ofType="Trainning">
+        <id column="pno" property="pno" />
+        <result column="titl" property="title" />
+        <result column="pric" property="pric" />
+        <result column="content" property="content" />
+        <result column="sdt" property="sdt" />
+        <result column="edt" property="edt" />
+        <result column="tno" property="tno" />
+        <result column="spono" property="spono" />
+        <result column="COMADDR" property="comaddr" />
+        <result column="COMDETAILADDR" property="comdetailaddr" />
+        <result column="company" property="comname"/>
+        <result column="lat" property="lat"/>
+        <result column="lng" property="lng"/>
+        <result column="meter" property="meter"/>
+        <result column="name" property="name"/>
+        <result column="expire" property="expire"/>
+        <result column="tipic" property="tiPic"/>
+        <result column="introduction" property="introduction"/>
+        <collection property="photoList" ofType="string">
+          <result column="pimg"/>
+        </collection>
+    </collection>
+  </resultMap>
+  
+  <select id="selectList" resultMap="promotionMap" parameterType="map">
+   <![CDATA[  select  p.pno, p.titl, p.pric, p.content, p.sdt, p.edt, p.tno, t.spono, t.comaddr, p.lat, p.lng,
+    (((6371*acos(cos(radians(#{lat}))*cos(radians(p.lat))*cos(radians(p.lng)
+  -radians(#{lon}))+sin(radians(#{lat}))*sin(radians(p.lat)))))*1000)
+  AS meter, i.pimg
+  from promotion p inner join tcher t on p.tno = t.tno
+  left outer join promotionimg i on p.pno = i.pno
+  where i.titlepic = 1 and p.expire < 2
+  having meter <  3000
+  ORDER BY meter 
+  LIMIT 0,3000 ]]>
+  </select>
+  <select id="trainerList" resultMap="promotionMap" parameterType="map">
+    SELECT  p.pno, p.titl, t.tno, m.name, t.comaddr, p.content, p.lng, p.lat, t.spono, t.introduction,
+(((6371*acos(cos(radians(#{lat}))*cos(radians(p.lat))*cos(radians(p.lng)
+  -radians(#{lon}))+sin(radians(#{lat}))*sin(radians(p.lat)))))*1000)
+  AS meter , i.pimg, m.img as tipic
+FROM memb m left join tcher t  on t.tno = m.mno 
+         left join promotion p on p.tno = t.tno 
+         left outer join promotionimg i on p.pno = i.pno
+         where i.titlepic = 1 and p.expire <![CDATA[ < ]]> 2
+         GROUP BY m.id
+  having meter <![CDATA[ < ]]> 3000
+  ORDER BY meter 
+  LIMIT 0,3000
+  </select>
+  <select id="latLonList" resultMap="promotionMap" parameterType="map">
+    SELECT  p.pno, p.titl, t.tno, m.name, t.comaddr, p.content, p.lng, p.lat, t.spono, t.introduction,
+(((6371*acos(cos(radians(#{lat}))*cos(radians(p.lat))*cos(radians(p.lng)
+  -radians(#{lon}))+sin(radians(#{lat}))*sin(radians(p.lat)))))*1000)
+  AS meter, i.pimg
+FROM memb m left join tcher t  on t.tno = m.mno 
+         left join promotion p on p.tno = t.tno 
+         left outer join promotionimg i on p.pno = i.pno
+         where i.titlepic = 1 and p.expire <![CDATA[ < ]]> 2
+         GROUP BY m.id
+  having meter <![CDATA[ < ]]> 3000
+  ORDER BY meter 
+  LIMIT 0,3000
+  </select>
+  
+  <insert id="insert" parameterType="promotion" useGeneratedKeys="true" keyColumn="pno" keyProperty="no">
+    insert into promotion(titl, pric, content, tno, lat, lng, sdt, edt, expire)
+    values( #{title}, #{pric}, #{content}, #{tno}, #{lat}, #{lng}, #{sdt}, #{edt}, 0) 
+  </insert>
+  
+  <insert id="insertImg" parameterType="map">
+    insert into promotionimg(pno, pimg, titlePic)
+    values( #{no}, #{pimg}, #{title}) 
+  </insert>
+  
+ <!--  <update id="" parameterType="">
+    update promotionimg set
+          titlePic=1
+          where PIMG = 
+  </update> -->
+  
+  
+  <select id="nextList" resultMap="promotionMap" parameterType="int">
+  <![CDATA[
+  select p.pno, p.titl, p.sdt, p.edt, p.pric, t.company, t.comaddr, t.comdetailaddr, p.content,
+          p.tno, p.lat, p.lng, i.pimg, p.expire
+from tcher t left outer join promotion p on t.tno = p.tno
+        left outer join promotionimg i on p.pno = i.pno
+  where p.pno < #{lastNo}
+  and p.pno > #{lastNo}-6
+  and p.pno > 0 and i.titlepic = 1 and p.expire < 2
+  order by p.pno desc
+  ]]>
+  </select>
+  
+  <select id="firstList" resultMap="promotionMap">
+  <![CDATA[
+select p.pno, p.titl, p.sdt, p.edt, p.pric, t.company, t.comaddr, t.comdetailaddr, p.content,
+          p.tno, p.lat, p.lng, i.pimg, p.expire
+from tcher t left outer join promotion p on t.tno = p.tno
+        left outer join promotionimg i on p.pno = i.pno
+  where p.pno > 0 and i.titlepic = 1 and p.expire < 2
+  order by p.pno desc
+  limit 0, 6;
+  ]]>
+  </select>
+  
+  <select id="healthFirstList" resultMap="promotionMap" parameterType="int">
+  <![CDATA[
+select p.pno, p.titl, p.sdt, p.edt, p.pric, t.company, t.comaddr, t.comdetailaddr, p.content,
+          p.tno, p.lat, p.lng, i.pimg, p.expire
+from tcher t left outer join promotion p on t.tno = p.tno
+        left outer join promotionimg i on p.pno = i.pno
+  where p.pno > 0 and t.spono = #{typeNo} and i.titlepic = 1 and p.expire < 2
+  order by p.pno desc
+  limit 0, 6;
+  ]]>
+  </select>
+  
+  <select id="healthNextList" resultMap="promotionMap" parameterType="int">
+  <![CDATA[
+select p.pno, p.titl, p.sdt, p.edt, p.pric, t.company, t.comaddr, t.comdetailaddr, p.content,
+          p.tno, p.lat, p.lng, i.pimg, p.expire
+from tcher t left outer join promotion p on t.tno = p.tno
+        left outer join promotionimg i on p.pno = i.pno
+  where p.pno <= #{lastNo}  and i.titlepic = 1 and p.expire < 2
+  and p.pno > #{lastNo}-6
+  and p.pno > 0  and t.spono = #{typeNo}
+ 
+  order by p.pno desc
+  ]]>
+  </select>
+  
+    <select id="selectOne" resultMap="promotionMap" parameterType="int">
+select p.pno, p.titl, p.sdt, p.edt, p.pric, t.company, t.comaddr, t.comdetailaddr, p.content,
+       p.tno, p.lat, p.lng, i.pimg, p.expire, (select pimg from promotionimg
+          where pno = #{no} and titlepic = 1) as tipic
+from tcher t left outer join promotion p on t.tno = p.tno
+        left outer join promotionimg i on p.pno = i.pno
+where p.pno = #{no}; 
+
+  </select>
+  
+  
+   <select id="selectPromotionList" resultMap="promotionMap" parameterType="int">
+    select  p.*, t.*, i.pimg, p.expire
+    from promotion p inner join tcher t  on p.tno=t.tno
+                            left outer join promotionimg i on p.pno = i.pno
+                            
+     where t.tno = #{no} and i.titlepic = 1 and p.expire <![CDATA[ < ]]> 2
+    order by p.pno desc
+  </select>
+  
+  <update id="deletePromotions" parameterType="int">
+    update promotion set expire = 2
+    where pno=#{no}
+  </update>
+  
+     <!-- <delete id="deletePromotions" parameterType="int">
+    delete from promotion
+    where pno=#{no}
+  </delete> -->
+  <select id="selectPromotionListTitle" resultMap="promotionMap" parameterType="int">
+    select  *
+    from promotion p inner join tcher t  on p.tno=t.tno
+    left outer join promotionimg i on p.pno = i.pno
+     where t.tno = #{no} and p.expire <![CDATA[ < ]]> 2
+    order by p.titl asc
+  </select>
+  <select id="getPromotionTitlePicList" resultMap="promotionMap" parameterType="int">
+    select i.pimg, p.pno from promotion p inner join promotionimg i on p.pno = i.pno where titlePic = 1 and p.tno = #{no}
+  </select>
+  
+  <delete id="delAddImage" parameterType="string">
+    delete from promotionimg
+    where pimg=#{delI}
+  </delete>
+  
+    <delete id="deletePromotionImg" parameterType="int">
+    delete from promotionimg
+    where pno = #{pno}
+  </delete>
+  
+  <update id="updatePromotion" parameterType="promotion" >
+    update promotion set
+	    titl=#{title},
+	    pric=#{pric},
+	    sdt=#{sdt},
+	    edt=#{edt},
+	    content=#{content}
+	  where pno=#{pno}
+  </update>
+  
+  <update id="titleImageInit" parameterType="int"  >
+    update promotionimg set
+          titlePic=0
+          where pno =#{pno}
+  </update>
+  <update id="updateTitlePic" parameterType="string" >
+    update promotionimg set
+      titlePic = 1
+      where pimg = #{titleName}
+  </update>
+  
+  <update id="scheduleStatus" parameterType="promotion">
+  	update promotion set
+  	expire = 1
+  	where sdt <![CDATA[ = ]]> curdate() or (sdt <![CDATA[ < ]]> curdate() and edt <![CDATA[ >= ]]> curdate())
+  </update>
+  
+  <update id="expireStatus" parameterType="promotion">
+  	update promotion set
+  	expire = 2
+  	where edt <![CDATA[ <= ]]> curdate()
+  </update>
+  
+  <!-- update promotionimg set
+          titlePic=1
+          where PIMG = '1503053199953_18'
+      
+        -->
+        
+  <!-- 
+    update promotionimg set
+          titlePic=0
+          where pno = '23';
+    
+  
+   -->
+  
+</mapper>

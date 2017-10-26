@@ -1,0 +1,49 @@
+create database pro;
+
+? grant all privileges on pro.* to suna@localhost identified by '1111' with grant option; 
+
+
+ mysql -u suna -p
+
+
+CREATE TABLE STUDY ( 
+ SNO INTEGER NOT NULL COMMENT '스터디일련번호', -- 스터디일련번호 
+ TITLE VARCHAR(255) NOT NULL COMMENT '제목', -- 제목 
+ DSCP TEXT NOT NULL COMMENT '설명', -- 설명 
+ SDT DATE NOT NULL COMMENT '시작일', -- 시작일 
+ EDT DATE NOT NULL COMMENT '종료일', -- 종료일 
+ MANY INTEGER NOT NULL COMMENT '모집 인원', -- 스터디 모집 인원 
+ EMAIL VARCHAR(255) NOT NULL COMMENT '이메일', -- 이메일
+ PRICE  INTEGER NOT NULL COMMENT '벌금', -- 벌금액
+ PLACE  VARCHAR(40) NULL COMMENT '장소', -- 장소
+ LAT DOUBLE NOT NULL COMMENT '위도', -- 위도
+ LNG DOUBLE NOT NULL COMMENT '경도' -- 경도
+ ) 
+ COMMENT '스터디'; 
+
+ -- 스터디
+ ALTER TABLE STUDY
+ ADD CONSTRAINT PK_STUDY -- 스터디 Primary key 
+ PRIMARY KEY ( 
+ SNO -- 스터디일련번호 
+ ); 
+  
+ -- 스터디 Index 
+ CREATE INDEX IX_STUDY
+ ON STUDY( -- 스터디 
+ TITLE ASC -- 제목 
+ ); 
+
+--auto increment 속성 추가
+
+ALTER TABLE STUDY MODIFY SNO INT AUTO_INCREMENT;
+
+ALTER TABLE STUDY AUTO_INCREMENT=1;
+
+ 
+
+
+
+
+
+

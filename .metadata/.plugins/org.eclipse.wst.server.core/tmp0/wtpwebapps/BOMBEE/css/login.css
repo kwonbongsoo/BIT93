@@ -1,0 +1,208 @@
+/*iphone5~6*/
+@media ( min-device-width : 320px) and (max-device-width: 374px) {
+	.logintype-label {
+		font-size: 1rem;
+	}
+	.input-idpw .logininput {
+		height: 39px;
+		padding-top: 0;
+	}
+	.other-login {
+		margin-top: 26%;
+	}
+	.radioform {
+		margin: 0 16.7%;
+	}
+}
+/*iphone plus*/
+@media ( min-device-width : 375px) and (max-device-width: 413px) {
+	.logintype-label {
+		font-size: 1.1rem;
+	}
+	.input-idpw .logininput {
+		height: 43px;
+		padding-top: 0;
+	}
+	.other-login {
+		margin-top: 28%;
+	}
+	.radioform {
+		margin: 0 20.2%;
+	}
+}
+
+@media ( min-device-width : 414px) {
+	.logintype-label {
+		font-size: 1.2rem;
+	}
+	.input-idpw .logininput {
+		height: 50px;
+		padding-top: 5%;
+	}
+	.other-login {
+		margin-top: 30%;
+	}
+	.radioform {
+	margin: 0 22.2%;
+}
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #f7ac1a;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input::placeholder {
+	color: white;
+}
+
+input:focus {
+	outline: none;
+}
+
+a:link {
+	color: white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+a:active {
+	color: white;
+	text-decoration: none;
+}
+
+.radioform {
+	display: inline-block;
+}
+
+.logintype {
+	opacity: 0;
+	position: absolute;
+}
+
+.logintype, .logintype-label {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.logintype-label {
+	position: relative;
+	color: white;
+}
+
+.logintype+.logintype-label:before {
+	content: '';
+	background: #fff;
+	border: 2px solid #ddd;
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	margin-right: 7px;
+	text-align: center;
+}
+
+.logintype+.logintype-label:before {
+	border-radius: 50%;
+}
+
+.logintype:checked+.logintype-label:before {
+	background: #f7ac1a;
+	box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+
+.login-container .inner-logo {
+	padding: 5% 20%;
+}
+
+.inner-logo .bombee {
+	display: inline-block;
+	width: 100%;
+}
+
+.input-idpw {
+	padding: 3% 5% 0 5%;
+	position: relative;
+}
+
+.input-idpw .id {
+	margin-top: 2%;
+}
+.input-idpw .logininput {
+	border: 0px;
+	border-radius: 0px;
+	border-bottom: 2px solid white;
+	background-color: rgba(255, 255, 255, 0);
+	font-size : 1.2rem;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 5%;
+}
+
+.input-idpw .signin {
+	position: absolute;
+	top: 75%;
+	left: 40%;
+	color: white;
+	background-color: black;
+	font-size: 2rem;
+}
+
+.send-btn {
+	padding: 10% 32% 2% 32%;
+}
+
+.send-btn .send {
+	width: 100%;
+}
+
+.login-container .forgetPW {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	font-size: .9rem;
+}
+
+.login-container .bottom {
+	margin: 4% 0;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	font-size: .99rem;
+	color: white;
+}
+
+.other-login {
+	padding-left: 7%;
+	padding-right: 7%;
+	position: relative;
+}
+
+.other-login>div {
+	display: inline;
+}
+
+.left-btn .kakao-img {
+	width: 49%;
+}
+
+.right-btn .facebook-img {
+	width: 49%;
+}
+
+/**/

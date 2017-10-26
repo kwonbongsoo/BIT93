@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mybatis에서 DAO 구현체를 자동으로 만들 때는,
+     SQL 맵퍼 파일의 namespace 값이 DAO 인터페이스와 같아야 한다. -->
+<mapper namespace="bitcamp.java93.dao.FriendDao">
+  <!-- DB 컬럼과 자바 객체의 프로퍼티를 연결하는 정보 -->
+  <resultMap type="friend" id="friendMap">
+    <id column="trano" property="trano"/>
+    <result column="mno" property="mno"/>
+    <result column="tno" property="tno"/>
+    <result column="confirm" property="confirm"/>
+    <result column="pno" property="pno"/>
+    <result column="sdt" property="sdt"/>
+    <result column="edt" property="edt"/>
+    <result column="period" property="period"/>
+    <result column="wishtime" property="wishtime"/>
+    <result column="mname" property="mname"/>
+    <result column="tname" property="tname"/>
+    <result column="date" property="date"/>
+    <result column='time' property="time"/>
+    <result column='pm' property='pm'/>
+    <result column='titl' property='title'/>
+    <result column='tpic' property='tPic'/>
+    <result column='mpic' property='mPic'/>
+  </resultMap>
+
+
+
+  <insert id="insert" parameterType="friend">
+          insert into tcher_trainer(mno, tno, confirm)
+          values(#{mno}, #{tno}, #{confirm});
+  </insert>
+  <insert id="insert2" parameterType="friend">
+          insert into f_like(mno, tno)
+          values(#{mno}, #{tno});
+  </insert>
+
+<insert id="addReq" parameterType="friend">
+          insert into tcher_trainer(mno, tno, pno, sdt, edt, period, reqdate, wishtime, confirm, writerev)
+          values(#{mno}, #{tno}, #{pno}, #{sdt}, date_add(#{sdt}, interval 30 day),
+          #{period}, now(), #{wishtime}, 0, 0)
+  </insert>
+  
+  <insert id="addAlert" parameterType="friend">
+      insert into alert(othername, mymno, kinds, date,
+      confirm, type, othermno) 
+      values(#{othername}, #{mymno}, #{type}, now(), 0, #{typenum}, #{othermno})
+  </insert>
+
+
+  <select id="detail" resultMap="friendMap" parameterType="friend">
+    select mno, tno from tcher_trainer
+     where mno=#{mno} and tno=#{tno}
+  </select>
+
+  <select id="detail2" resultMap="friendMap" parameterType="friend">
+   select mno, tno from f_like
+     where mno=#{mno} and tno=#{tno}
+  </select>
+
+ <select id="detail3" resultMap="friendMap" parameterType="friend">
+   select * from tcher_trainer
+     where mno=#{mno} and tno=#{tno}
+  </select>
+
+    <select id="addList"  resultMap="friendMap" parameterType="int">
+    select t.*, date_format(t.reqdate, '%Y-%m-%d') as date, 
+    date_format(t.reqdate, '%h:%i') as time, p.titl,
+    date_format(t.reqdate, '%p') as pm,
+    m.name as mname, m.img as mpic 
+    from tcher_trainer t
+    inner join memb m on t.mno = m.mno
+    inner join memb mm on t.tno = mm.mno
+    inner join promotion p on t.pno = p.pno
+    where t.tno = #{no} and t.confirm = 0
+  </select>
+  
+  <select id="addMlist" resultMap="friendMap" parameterType="int">
+  	select t.*, date_format(t.reqdate, '%Y-%m-%d') as date, 
+    date_format(t.reqdate, '%h:%i') as time, p.titl,
+    date_format(t.reqdate, '%p') as pm,
+    mm.name as tname, mm.img as tpic 
+    from tcher_trainer t
+    inner join memb m on t.mno = m.mno
+    inner join memb mm on t.tno = mm.mno
+    inner join promotion p on t.pno = p.pno
+    where t.mno = #{no} and t.confirm = 0
+  </select>
+
+
+
+  <delete id="delete" parameterType="int">
+    delete from tcher_trainer where mno=#{mno} and tno=#{tno}
+  </delete>
+
+  <delete id="delete2" parameterType="int">
+    delete from f_like where mno=#{mno} and tno=#{tno}
+  </delete>
+
+  <delete id="friendDelete" parameterType="int">
+    delete from tcher_trainer where trano=#{no}
+  </delete>
+  
+  <update id="friendUpdate"  parameterType="friend">
+    update tcher_trainer set confirm=1 , sdt=#{sdt}, 
+    edt=date_add(#{sdt}, interval #{period} month)
+    where trano = #{no}
+  </update>
+
+
+
+</mapper>

@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!--  DOM API 사용법 -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+
+  </head>
+  <body>
+    <button id="btn1" type="button">버튼1</button>
+    <button id="btn2" type="button" onclick="console.log(event)">버튼2</button>
+
+<script>
+/* 이벤트 다루기 - 이벤트 정보
+=> 모든 이벤트 핸들러는 호출될 때 파라미터 값으로
+   이벤트 정보를 받는다.
+=> 만약 태그의 onclick 속성에 자바스크립트 코드를 작성했다면,
+   그 코드에서 event 라는 이름으로 이벤트 객체를 사용할 수 있다.
+*/
+  var btn1 = document.querySelector('#btn1');
+  // var btn2 = document.querySelector('#btn2');
+  var btn1Click = function() {
+    console.log('11111111')
+  }
+
+
+btn1.addEventListener('click',function(event) {
+  console.log(event)
+})
+// btn2.onclick = function() {
+//   btn1.removeEventListener('click', btn1Click)
+// }
+
+/* 이것은 태그에서 onclick 속성으로 등록된 코드를 덮어쓴다. 하나밖에 안써진다 */
+
+
+
+</script>
+
+</body>

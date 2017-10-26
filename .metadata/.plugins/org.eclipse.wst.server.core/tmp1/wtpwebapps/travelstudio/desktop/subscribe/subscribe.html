@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>header</title>
+<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/subscribe/subscribe.css">
+</head>
+<body>
+<div class='header-container'></div>
+
+<div class="title">
+  <div>구독 페이지<br><span class="title-text">구독자 수: 4명</span></div>
+</div>
+
+<div class="content-container"></div>
+
+<script id="content-template" type="text/x-handlebars-template">
+  {{#each info}}
+  <div class="user_one" data-mno='{{mno}}'>
+    <div class="user_one_info">
+      <div class="profile_photo">
+        <img id="circle_profile" src="{{path}}"></img>
+      </div>
+      <div id="holding">
+        <div class="profile_desc">
+          <div class="user_desc sub-text">
+            <span class="user_name">{{alias}} </span>
+          </div>
+          <div class="intro sub-text">{{intro}}</div>
+          <div class='info_form'>
+            <div class="info_write sub-text">
+              <span class="fa fa-file-text-o" aria-hidden="true"></span>
+              <span class="tit_info">여행기</span> <span
+                class="txt_num travel_num">0</span>
+            </div>
+            <div class="info_nation sub-text" data-mno='{{mno}}'>
+              <span class="fa fa-map-marker map" aria-hidden="true"></span> <span
+                class="tit_info">여행국가</span> <span
+                class="txt_num visit_num total_{{mno}}">0</span>
+            </div>
+            <div class="member_visit_{{mno}} memberflag"></div>
+            <div class="cancel">구독 취소
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</script>
+
+<div class='footer-container'></div>
+
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="/js/subscribe/subscribe.js"></script>
+</body>
+</html>

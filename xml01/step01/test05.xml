@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  well-formed XML III
+-  XML 기본 작성 규칙에 따라 만든 XML을 말한다
+-  시작 태그와 끝태그를 작성할 때 지켜야 할 규칙
+-->
+<root-tag>
+  <!-- 내용에 <  문자를 넣을수 없다
+  <tag>내용에 < 문자를 포함하면 XML을 분석하는놈(파서)은 태그의 시작이라고
+        착각한다 그래서 오류가 발생한다</tag>
+
+        내용에 < 문자를 넣을 수 밖에 없는 상황이라면
+        <문자 대신 XML에서 따로 정의한 표현(엔티티라 부른다)을 사용하라!
+        < &lt;
+        > &gt;
+        " &quot;
+        ' &apos;
+        & &amp;
+        <code>if (a < b) console.log('okok')</code>
+        <code>if (a && b) console.log('okok')</code>
+  -->
+  <code>if (a > b) console.log('okok')</code>
+  <code>if (a &gt; b) console.log('okok')</code>
+
+  <code>if (a &lt; b) console.log('okok')</code>
+  <code>if (a &amp;&amp; b) console.log('okok')</code>
+  <!-- 큰 따옴표("")안에 큰 따옴표를 넣을수 없다 -->
+  <!-- 오류!
+  <code script="Java"Script"/>
+-->
+
+  <code script='Java"Script'/> <!-- 싱글퍼테이션이지만 더블퍼테이션으로보임 가능함 -->
+  <code script="Java'Script"/> <!-- 싱글퍼테이션 넣으려면 바깥을 더블퍼테이션
+                                    더블퍼테이션을 넣으려면 바깥을 싱글퍼테이션으로 감싼다
+                                  -->
+  <code script="Java&quot;Script"/>
+  <code script="Java&apos;Script"/>
+
+  <!-- 내용 전체에 대해 <나 & 등을 무시하라고 설정할 수 있다. -->
+  <code>
+  <![CDATA[
+    if(a < 10){
+      console.log("10보다 작다")
+    }
+    if (a && b)
+      console.log("a와 b모두 참이다")
+      ]]>
+  </code>
+
+</root-tag>

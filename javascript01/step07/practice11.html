@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>계산기</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+  </head>
+  <body>
+    <table>
+      <tr><td id="printNum" rowspan="2" colspan="4"></td></tr>
+      <tr></tr>
+      <tr><td><button type="button" id="ac">AC</button>
+      </td><td colspan="2"><button type="button" id="empty">^-^</button></td>
+      <td><button type="button" id="div" class="calc">/</button></td>
+    </tr> <!-- AC /-->
+      <tr>
+        <td><button type="button" id="seven" class="num" value='7'>7</button></td>
+        <td><button type="button" id="eight" class="num" value='8'>8</button></td>
+        <td><button type="button" id="nine" class="num" value='9'>9</button></td>
+        <td><button type="button" id="multiple" class="calc">x</button></td>
+      </tr> <!-- 7 8 9 * -->
+      <tr>
+        <td><button type="button" id="four" class="num" value='4'>4</button></td>
+        <td><button type="button" id="five" class="num" value='5'>5</button></td>
+        <td><button type="button" id="six" class="num" value='6'>6</button></td>
+        <td><button type="button" id="minus" class="calc">-</button></td>
+      </tr> <!-- 4 5 6 - -->
+      <tr>
+        <td><button type="button" id="one" class="num" value='1'>1</button></td>
+        <td><button type="button" id="two" class="num" value='2'>2</button></td>
+        <td><button type="button" id="three" class="num" value='3'>3</button></td>
+        <td><button type="button" id="plus" class="calc">+</button></td>
+      </tr> <!-- 1 2 3 + -->
+      <tr><td colspan="2"><button type="button" id="zero" class="num" value='0'>0</button></td>
+        <td><button type="button" id="jum" class="num">.</button></td>
+        <td><button type="button" id="equal" class="calc">=</button></td>
+      </tr> <!-- 0 . = -->
+    </table>
+    <script>
+    var printNum = document.querySelector('#printNum')
+    var zero = document.querySelector('#zero')
+    var one = document.querySelector('#one')
+    var two = document.querySelector('#two')
+    var three = document.querySelector('#three')
+    var four = document.querySelector('#four')
+    var five = document.querySelector('#five')
+    var six = document.querySelector('#six')
+    var seven = document.querySelector('#seven')
+    var eight = document.querySelector('#eight')
+    var nine = document.querySelector('#nine')
+    var plus = document.querySelector('#plus')
+    var minus = document.querySelector('#minus')
+    var multiple = document.querySelector('#multiple')
+    var div = document.querySelector('#div')
+    var equal = document.querySelector('#equal')
+    var ac = document.querySelector('#ac')
+    var num
+    var num1
+    var result
+    var calc
+
+    zero.addEventListener('click', function() {
+        printNum.innerHTML += "0"
+    })
+    one.addEventListener('click', function() {
+      printNum.innerHTML += "1"
+    })
+    two.addEventListener('click', function() {
+      printNum.innerHTML += "2"
+    })
+    three.addEventListener('click', function() {
+      printNum.innerHTML += "3"
+    })
+    four.addEventListener('click', function() {
+      printNum.innerHTML += "4"
+    })
+    five.addEventListener('click', function() {
+      printNum.innerHTML += "5"
+    })
+    six.addEventListener('click', function() {
+      printNum.innerHTML += "6"
+    })
+    seven.addEventListener('click', function() {
+      printNum.innerHTML += "7"
+    })
+    eight.addEventListener('click', function() {
+      printNum.innerHTML += "8"
+    })
+    nine.addEventListener('click', function() {
+      printNum.innerHTML += "9"
+    })
+    ac.addEventListener('click', function() {
+      printNum.innerHTML = ""
+      num = undefined
+      num1 = undefined
+      calc = undefined
+      result = undefined
+    })
+    plus.addEventListener('click', function() {
+      if(calc == undefined) {
+        calc = 'plus'
+        num = parseInt(printNum.innerHTML)
+        printNum.innerHTML = ""
+      }else {
+        num2 = parseInt(printNum.innerHTML)
+        result = num + num2
+        printNum.innerHTML = result
+        calc = undefined
+      }
+
+    })
+    minus.addEventListener('click', function() {
+      if(calc == undefined) {
+        calc = 'minus'
+        num = parseInt(printNum.innerHTML)
+        printNum.innerHTML = ""
+      }else {
+        num2 = parseInt(printNum.innerHTML)
+        result = num - num2
+        printNum.innerHTML = result
+        calc = undefined
+      }
+    })
+    multiple.addEventListener('click', function() {
+      if(calc == undefined) {
+        calc = 'multiple'
+        num = parseInt(printNum.innerHTML)
+        printNum.innerHTML = ""
+      }else {
+        num2 = parseInt(printNum.innerHTML)
+        result = num * num2
+        printNum.innerHTML = result
+        calc = undefined
+      }
+    })
+    div.addEventListener('click', function() {
+      if(calc == undefined) {
+        calc = 'div'
+        num = parseInt(printNum.innerHTML)
+        printNum.innerHTML = ""
+      }else {
+        num2 = parseInt(printNum.innerHTML)
+        result = num / num2
+        printNum.innerHTML = result
+        calc = undefined
+      }
+    })
+    equal.addEventListener('click', function() {
+      num2 = parseInt(printNum.innerHTML)
+
+      if(calc == 'plus'){
+        printNum.innerHTML = num + num2
+      }
+      else if(calc == 'minus') {
+        printNum.innerHTML = num - num2
+      }
+      else if(calc == 'multiple'){
+        printNum.innerHTML = num * num2
+      }
+      else {
+        printNum.innerHTML = num / num2
+      }
+    })
+
+
+    </script>
+  </body>
+</html>

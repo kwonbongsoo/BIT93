@@ -1,0 +1,27 @@
+create database word;
+
+grant all privileges on word.* to word@localhost identified by '1111' with grant option;
+
+mysql -u word -p;
+
+
+CREATE TABLE WORD ( 
+ WNO INTEGER NOT NULL COMMENT '단어일련번호', -- 단어일련번호 
+ WORD VARCHAR(255) NOT NULL COMMENT '단어' 
+ ) 
+ COMMENT '스터디'; 
+
+ -- 단어
+ ALTER TABLE WORD
+ ADD CONSTRAINT PK_WORD -- 단어 Primary key 
+ PRIMARY KEY ( 
+ WNO -- 단어일련번호 
+ ); 
+  
+
+ --auto increment 속성 추가
+ALTER TABLE WORD MODIFY WNO INT AUTO_INCREMENT;
+
+ALTER TABLE WORD AUTO_INCREMENT=1;
+
+ 

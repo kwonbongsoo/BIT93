@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> <!-- root element -->
+<head> <!-- HTML 문서에 대한 설명 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1"/>
+  <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel='stylesheet' href='../css/bombee.css'>
+  <link rel='stylesheet' href='../css/main.css'>
+  <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>  
+
+  <script type="text/javascript">
+	  var images = ['m-t01.jpg', 'm-t02.jpg', 'm-t03.jpg', 'm-t04.jpg', 'm-t05.jpg',
+	                'm-t06.jpg', 'm-t07.jpg', 'm-t08.jpg', 'm-t09.jpg', 'm-t10.jpg', 'm-t11.jpg'];
+	  $(document).ready(function() {
+	    $('#body-img').css({'background-image': 'url(' + '../image/M-Image/' + images[Math.floor(Math.random() * images.length)] + ')'});
+	    $('.header').load('/main/header.html')
+	  })
+</script>
+</head>
+<body>
+
+<div class='main-container'>
+    <div class='header'></div>
+
+    <div class="body-outer">
+      <div class="body-inner"><!-- main 육각형 버튼 -->
+        <div class='indexUp meeting'>
+          <img id='meeting' src='../image/meeting-before.png'/>
+        </div>
+        <div class='management indexUp'>
+          <img id='management'  src='../image/management-before.png'/>
+        </div>
+      </div><!-- main 육각형 버튼 끝 -->
+
+	  <div id='body-img'></div> <!-- main 배경 -->
+	  <div id='bg-img'></div> <!-- main 배경 끝 -->
+  </div>
+</div><!--main-container 끝-->
+<script>
+var meeting = $('#meeting'),
+    management = $('#management'),
+    membertype
+
+  meeting.click(function() {
+	  location.href='../list/mainList.html'
+  })
+
+  management.click(function() {
+	  $.getJSON('/auth/userinfo.json', function(result) {
+		    console.log(result.status)
+		    if (result.status == 'fail')
+		    	location.href = '../auth/login.html'
+		    else {
+		    	  membertype = result.data.membertype
+		    	   if (membertype == 2)
+		    		    location.href = '../main/t-login.html'
+		    		 else
+		    			  location.href = '../main/u-login.html'
+		    }
+		})
+  })
+
+
+</script>
+</body>
+</html>

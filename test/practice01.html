@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입</title>
+  <style>
+  * {
+    border: 1px solid red;
+  }
+  div {
+    padding: 5px;
+  }
+  @font-face {
+    font-family: "myfont"; /* 폰트 그룹명을 설정한다. */
+    src: url('icons.woff') format('woff')
+  }
+  #state {
+    font-family: myfont;
+    position: relative;
+    top: 5px;
+    display:inline-block;; /*  인라인은 글자수많큼 늘어난다 너비를 정할수 없다 */
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+  }
+  #state1 {
+    font-family: myfont;
+    position: relative;
+    top: 5px;
+    display:inline-block;; /*  인라인은 글자수많큼 늘어난다 너비를 정할수 없다 */
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+  }
+  </style>
+</head>
+<body>
+  <form>
+    <table>
+      <div>ID<input id="ID" type="text">
+        <div id="state"></div></div>
+      <div>pass<input id="pwd" type="password">
+        <div id="state1"></div></div>
+      <div><button id="signupBtn" type="button">중복확인</button></div>
+    </table>
+
+    <script>
+    var id = document.getElementById('ID');
+    var btn = document.getElementById('signupBtn');
+    var state = document.getElementById('state');
+    var state1 = document.getElementById('state1');
+    var pass = document.getElementById('pwd');
+
+    btn.addEventListener('click',function() {
+      //입력 상자에 들어있는 값을 검사하여 이메일 중복 여부에 따라 아이콘을 출력
+      if(id.value == "hong@test.com" ) {
+        state.innerHTML = "&#61453;";
+        state.style.color = "#ff0000";
+      }else {
+        state.innerHTML = "&#61452;";
+        state.style.color = "#0000ff";
+      }
+      if(pass.value.length<8) {
+        state1.innerHTML = "&#61452;";
+        state1.style.color = "#0000ff";
+        alert('비밀번호가 짧습니다');
+      }else {
+        state1.innerHTML = "&#61452;";
+        state1.style.color = "#0000ff";
+      }
+    });
+    </script>
+  </form>
+</body>
+</html>

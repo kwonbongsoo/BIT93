@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!--  DOM API 사용법 -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+    <style>
+      div {
+        border: 1px solid red;
+        padding: 10px;
+      }
+      .child {
+        border: 5px solid lightgray;
+        width: 100px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="d1">
+      <div id="c1" class="child">자식태그1</div>
+      <div id="c2" class="child">자식태그2</div>
+      <div id="c3" class="child">자식태그3</div>
+      <div id="c4" class="child">자식태그4</div>
+      <div id="c5" class="child">자식태그5</div>
+      <div id="c6" class="child">자식태그6</div>
+
+    </div>
+
+<script>
+/* 태그 삭제하기 III
+1) 부모태그를 모를때
+     =>element.parentNode 이용하라
+     element.parentNode.removeChild()
+*/
+
+  var d1 = document.querySelector('#d1');
+  var c1 = document.querySelector('#c1');
+
+  c1.addEventListener('click', function() {
+    c1.parentNode.removeChild(c1)
+  })
+
+
+
+</script>
+
+</body>

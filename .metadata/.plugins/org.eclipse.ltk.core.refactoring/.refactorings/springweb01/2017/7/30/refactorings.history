@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;webapp&apos;&#x0D;&#x0A;- Original project: &apos;springweb01&apos;&#x0D;&#x0A;- Destination element: &apos;webapp&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     controller06.html&#x0D;&#x0A;     controller09.html&#x0D;&#x0A;     controller08.html&#x0D;&#x0A;     controller05.html&#x0D;&#x0A;     controller10.html" description="Copy files" element1="src/main/webapp/WEB-INF/view/controller06.html" element2="src/main/webapp/WEB-INF/view/controller09.html" element3="src/main/webapp/WEB-INF/view/controller08.html" element4="src/main/webapp/WEB-INF/view/controller05.html" element5="src/main/webapp/WEB-INF/view/controller10.html" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1501227471524" target="/springweb01/src/main/webapp" units="0" version="1.0"/>
+</session>

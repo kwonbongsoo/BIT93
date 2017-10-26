@@ -1,0 +1,89 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <style>
+  .container {
+    width: 600px;
+    margin: 0px auto;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<h1>학생 목록</h1>
+<table id="student-tbl" class="table table-hover">
+<thead>
+  <tr>
+    <th>번호</th>
+    <th>이름</th>
+    <th>전화</th>
+    <th>이메일</th>
+    <th>재직여부</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<button type="button" class="btn btn-primary" id="add-btn">추가</button>
+</div>
+
+<script src="test10.js"></script>
+<script>
+"use strict"
+/* AJAX 응용 II
+=> 학생 목록 출력
+*/
+var tbody = $('#student-tbl > tbody'),
+    addBtn = $('#add-btn');
+
+$.ajax('http://localhost:8080/webapp/student/list.json?pageNo=1&pageSize=20', {
+  dataType: 'json',
+  success: function(result) {
+    if (result.status != 'success') {
+      alert('데이터를 가져오는데 실패했습니다.')
+      return
+    }
+    var list = result.data.list
+    for (var s of list) {
+      $("<tr>").html("<td>" + s.memberNo +
+                "</td><td><a href='#' data-no='" + s.memberNo + "' class='view-link'>" + s.name +
+                "</a></td><td>" + s.tel +
+                "</td><td>" + s.email +
+                "</td><td>" + (s.working ? "재직중" : "실업") + "</td>")
+               .appendTo(tbody)
+               //새로운 요소를 타겟(target)에 해당하는 요소 마지막에 추가합니다.
+    }
+    $('table .view-link').click(onClickViewLink)
+  }
+})
+
+function onClickViewLink(event) {
+  location.href = 'test10_view.html?no=' + $(this).attr('data-no')
+  //$(this) 에서 if (value instanceof HTMLElement) 문을 사용
+  event.preventDefault()
+  //  기본 이벤트를 막는다.
+  // ex) 입력폼에서 텍스트를 지우려고 백스페이스를 하면 기본 이벤트로 인해서
+  // 페이지가 뒤로 넘어간다. 그걸 방지하기 위해서 사용.. 그것뿐만아니라
+  // 다른 장점이 있을듯 싶다.
+}
+
+addBtn.click(function() {
+  location.href = 'test10_view.html'
+})
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>계산기</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+     crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+      <table>
+        <tr>
+          <td id="printNum" rowspan="2" colspan="4">
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><button type="button" id="ac" onclick="clearcal()" class="btn btn-info">AC</button></td>
+          <td colspan ="2"><button type="button" id="back" class="btn btn-success">backspace</button></td>
+          <td><button type="button" onclick="num('/')" class="btn btn-warning">/</button></td>
+        </tr> <!-- ac -->
+        <tr>
+          <td><button type="button" onclick="num('7')" class='btn btn-primary'>7</button></td>
+          <td><button type="button" onclick="num('8')" class='btn btn-primary'>8</button></td>
+          <td><button type="button" onclick="num('9')" class='btn btn-primary'>9</button></td>
+          <td><button type="button" onclick="num('*')" class="btn btn-warning">*</button></td>
+        </tr> <!-- 7 8 9  -->
+        <tr>
+          <td><button type="button" onclick="num('4')" class='btn btn-primary'>4</button></td>
+          <td><button type="button" onclick="num('5')" class='btn btn-primary'>5</button></td>
+          <td><button type="button" onclick="num('6')" class='btn btn-primary'>6</button></td>
+          <td><button type="button" onclick="num('-')" class="btn btn-warning">-</button></td>
+        </tr> <!-- 4 5 6 -->
+        <tr>
+          <td><button type="button" onclick="num('1')" class='btn btn-primary'>1</button></td>
+          <td><button type="button" onclick="num('2')" class='btn btn-primary'>2</button></td>
+          <td><button type="button" onclick="num('3')" class='btn btn-primary'>3</button></td>
+          <td><button type="button" onclick="num('+')" class="btn btn-warning">+</button></td>
+        </tr> <!-- 1 2 3 -->
+        <tr>
+          <td colspan="2"><button type="button"
+              id="zero" value="0"
+             onclick="num('0')" class='btn btn-primary'>0</button></td>
+          <td><button type="button" onclick="num('.')" class="btn btn-warning">.</button></td>
+          <td><button type="button" onclick="calc()" class="btn btn-warning">=</button></td>
+        </tr>
+      </table>
+      <script src="context.js"></script>  
+    <script src="script.js"></script>
+  </body>
+</html>

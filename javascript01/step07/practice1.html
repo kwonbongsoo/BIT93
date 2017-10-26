@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>계산기</title>
+    <style>
+      td {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  <body>
+    <form name="myform">
+  <table  align="center">
+      <tr>
+        <td><input type="text" name="screen" size="23"></td>
+      </tr>
+       <tr>
+         <td>
+          <input type="button" value=" 7 " onclick="cal('7')" >
+          <input type="button" value=" 8 " onclick="cal('8')" >
+          <input type="button" value=" 9 " onclick="cal('9')" >
+          <input type="button" value=" + " onclick="cal('+')" >
+         </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value=" 4 " onclick="cal('4')" >
+            <input type="button" value=" 5 " onclick="cal('5')" >
+            <input type="button" value=" 6 " onclick="cal('6')" >
+            <input type="button" value=" * " onclick="cal('*')" >
+          </td>
+        </tr>
+      <tr>
+        <td>
+           <input type="button" value=" 1 " onclick="cal('1')" >
+           <input type="button" value=" 2 " onclick="cal('2')" >
+           <input type="button" value=" 3 " onclick="cal('3')" >
+          <input type="button" value=" / " onclick="cal('/')" >
+        </td>
+      </tr>
+      <tr>
+       <td>
+          <input type="button" value=" 0 " onclick="cal('0')" class="btn">
+          <input type="button" value=" . " onclick="cal('.')" class="btn">
+          <input type="button" value=" C " onclick="clearcal()" class="btn">
+          <input type="button" value=" = " onclick="answer()" class="btn">
+        </td>
+      </tr>
+  </table>
+  </form>
+      <script>
+    function cal(num){
+      myform.screen.value += num;
+    }
+    function answer(){
+      myform.screen.value = eval(document.myform.screen.value);
+    }
+    function clearcal(){
+      myform.screen.value = "";
+    }
+      </script>
+    </form>
+  </body>
+</html>

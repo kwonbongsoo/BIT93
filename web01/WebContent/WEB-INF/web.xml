@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>web01</display-name>
+  
+  <!--  리스너 등록한다. -->
+  <!--  
+  <listener>
+    <listener-class>step09.Listener01</listener-class>
+  </listener>
+  -->
+  
+  <!--  필터를 등록한다 -->
+  <!--  1) 필터 클래스 등록 -->
+  <!--  
+   <filter>
+    <filter-name>step10.Filter01</filter-name>
+    <filter-class>step10.Filter01</filter-class>
+   </filter>
+   -->
+  <!--  2) 필터 클래스에 URL 적용 -->
+  <!--  
+    <filter-mapping>
+      <filter-name>step10.Filter01</filter-name>
+      <url-pattern>/step10/*</url-pattern>
+    </filter-mapping>
+    -->
+  <servlet>
+  <!--  유지 보수 편하라고 별명을 클래스 이름으로 한다. -->
+   <servlet-name>HelloServlet</servlet-name> <!--  서블릿 클래스의 별명을 지정 -->
+   <servlet-class>HelloServlet</servlet-class> <!--  서블릿 클래스의 전체 이름을 적는다. -->
+   
+  <!-- 서블릿 클래스를 등록한다. -->
+  </servlet>
+  
+  <!--  
+  <servlet>
+   <servlet-name>servlets.step01.Servlet01</servlet-name> 
+   <servlet-class>servlets.step01.Servlet01</servlet-class> 
+  </servlet>
+    -->
+  <!--  서블릿에 URL을 연결한다. -->
+    <!--  
+    <servlet>
+   <servlet-name>step08.Servlet02</servlet-name> 
+   <servlet-class>step08.Servlet02</servlet-class>
+   <load-on-startup>1</load-on-startup>
+  </servlet>
+  -->
+  <!-- 바로위의서블릿은 서버자원을 미리 생성하는 서블릿이다. -->
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+    <!-- 요청 URL
+                문법)http:// 서버주소: 포트번호/웹애플리케이션이름/서블릿URL 
+                예)   http://localhost:8888/web01/hello-->
+  </servlet-mapping>
+  
+  
+  
+<!--  
+  <servlet-mapping>
+    <servlet-name>servlets.step01.Servlet01</servlet-name>
+    <url-pattern>/step01/Servlet01</url-pattern>
+  </servlet-mapping>
+  -->
+</web-app>

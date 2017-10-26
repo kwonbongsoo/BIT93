@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <button id="btn1">"text/plain" 콘텐트 보냄</button>
+    <button id="btn2">"application.json" 콘텐트 보냄</button>
+    <div>
+      <textarea id="ta" cols="80", rows="8"></textarea>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+   $("#btn1").click(()=> {
+	   $.ajax("control/controller10/ok.do", {
+		   method: "post",
+		   data: "hello!",
+		   headers: {"Content-Type": "text/plain"},
+		   accepts: {text: "text/plain"},
+		   dateType: "text"})
+		   .done(
+		   (result)=> {
+			   $("#ta").val(result)
+		   })
+		   .fail((xhr, status, error)=> {
+			   $("#ta").val(xhr.responseText)
+		   })
+   })
+   
+   
+   $("#btn2").click(()=> {
+     $.ajax("control/controller10/ok.do", {
+       method: "post",
+       data: {"name" : "hong" , "age": "20", "tel":"1111-1111"},
+       headers: {"Content-Type": "application/json"},
+       accepts: {json:"application/json"},
+       dateType: "json"})
+       .done(
+       (result)=> {
+         $("#ta").val(result)
+       })
+       .fail((xhr, status, error)=> {
+         $("#ta").val(xhr.responseText)
+       })
+   })
+
+</script>
+</html>

@@ -1,0 +1,135 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    * {
+      font-size: 30px;
+      text-align: center;
+      font-family: "돋움", dotum, sans-serif;
+    }
+    td {
+      width : 300px;
+      height : 50px;
+      border: solid 2px black;
+    }
+    textarea {
+      width : 600px;
+      heigt : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <td class="warning" rowspan=2>^0^</td>
+      <td class="success">맞춘 개수</td>
+    </tr>
+    <tr>
+      <td id="success" class="info">0</td>
+    </tr>
+    <tr>
+      <td class="success">남은시간</td>
+      <td class="danger" id='timeout'></td>
+    </tr>
+    <tr>
+      <td id="fi-word" class="info" colspan=2 rowspan=2 ></td>
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+      <td colspan=2 class="danger"><input rows="1" cols="30" class="form-control" id="fi-keyboard"></input></td>
+    </tr>
+    <tr>
+      <td colspan=2 ><button type="button" id="startBtn"></button></td>
+    </tr>
+
+
+    </table>
+
+  </form>
+
+
+</div><!-- table-responsive -->
+
+<script>
+"use strict"
+  window.$ = window.jQuery = require('jquery')
+  // var wordService = require('electron').remote.getGlobal('wordService')
+  var fiWord = $('#fi-word'),
+      fiKeyboard = $('#fi-keyboard'),
+      fiSuccess = $('#success'),
+      word, userInput,
+      list =[0],
+      cnt = 0,
+      startBtn = $('#startBtn'),
+      btnStateMent = 0,
+      no,count,interval2
+
+
+
+
+      startBtn.click(() => {
+        if(btnStateMent == 0){
+          start()
+        }
+        btnStateMent++;
+      })
+  // wordService.list(
+  //   function(results) {
+  //     for (var i = 0; i < results.length; i++)
+  //       list[i] = results[i].word
+  //   },
+  //   function(error) {
+  //     alert('데이터 조회 중 오류 발생!')
+  //     throw error;
+  // }) //list()
+
+
+  function start() {
+    $.getJSON('word.json', (result) => {
+      list = result.results
+      no = list.length -1
+      fiWord.text(list[no])
+      fiSuccess.text(cnt)
+
+    })
+        count = 30
+
+    fiKeyboard.keyup(() => {
+      word = fiWord.text()
+      userInput = fiKeyboard.val()
+      fiKeyboard.val('')
+      if (count > 0) {
+        if (event.keyCode == 13) {
+          if (word == userInput) {
+            no--
+            if(no == -1) {
+              return
+            }
+            list.pop()
+            fiWord.text(list[no])
+            fiSuccess.text(++cnt)
+          }
+        }
+      }
+    })
+
+     interval2 = setInterval(function() {
+      if (count == 0 || no == -1) {
+        clearInterval(interval2)
+        alert('게임 종료')
+        btnStateMent = 0
+      }
+      $('#timeout').text(count--)
+    }, 1000)
+  }
+
+</script>
+</body>
+</html>

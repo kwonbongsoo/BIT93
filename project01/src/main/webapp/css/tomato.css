@@ -1,0 +1,143 @@
+/*iphone5~6*/
+@media (min-device-width: 320px) and (max-device-width: 414px) {
+  html {
+    font-size: 12px;
+    height: 100%;
+  }
+  .container {
+    min-width: 320px;
+    max-width: 414px;
+    padding: 0;
+  }
+}
+/*iphone plus*/
+@media (min-device-width: 415px) and (max-device-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    min-width: 415px;
+    max-width: 767px;
+    padding: 0;
+  }
+}
+/*ipad*/
+@media (min-device-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 768px;
+    padding: 0;
+  }
+}
+
+@font-face {
+  font-family: 'UhBeemysen', 'UhBeeMyHusband';
+  /*src: url('../font/UhBeemysen.woff');*/
+
+  src: local(※),
+  url('../font/UhBeemysen.woff') format('woff'),
+  url('../font/UhBeenMyHusband.woff') format('woff');
+  /*url('../font/UhBeemysen.eot?#iefix') format('embedded-opentype'),*/
+
+}
+
+html body div a h1 {
+  font-family: 'UhBeemysen', 'UhBeeMyHusband';
+  font-size: 1.6rem;
+}
+/*bootstrap 버튼 색 변경*/
+.btn-danger {
+  background-color: #d17171;
+  border: 0;
+  outline: 0;
+}
+
+.btn-danger:hover{
+  background-color: #d17171;
+}
+
+/* float 시 div 높이 만들어 주기*/
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.fa {
+  font-size: 2rem;
+  color: black;
+}
+.eventI::before {
+  content: " | ";
+  color:black;
+  margin: 5%;
+}
+
+.header {
+  height: 60px;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  line-height: 60px;
+}
+.header a {
+  padding-top: 3px;
+}
+
+.footer-img {
+  padding-bottom: 7px;
+}
+.container {
+  margin: 0px auto;
+}
+
+.outer {
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.centered {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 1em;
+  color: white;
+}
+
+.footer-button {
+  margin: 5%;
+  color: black;
+}
+
+#footer-last-tomato {
+  margin:0%;
+}
+
+#logo {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0;
+}
+#logo a {
+  color: #d17171;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 60px;
+}
+#menu {
+  position: absolute;
+  left: 10px;
+}
+#search {
+  position: absolute;
+  right: 10px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+  <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel='stylesheet' href='../css/bombee.css'>
+  <link rel='stylesheet' href='../css/mainList.css'>
+  <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.min.css">
+  <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+  <script src="../node_modules/jquery-ui-dist/jquery-ui.js"></script>
+  <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.header').load('../main/header.html')
+    })
+  </script>
+ 
+</head>
+
+<body>
+  <div class='allList-container'>
+    <div class='header'></div>
+    <!-- Swiper -->
+    <div class="indexUp swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src='../image/main_1.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_2.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_3.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_4.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_5.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_6.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_7.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_8.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_9.jpg'></div>
+        <div class="swiper-slide"><img src='../image/main_10.jpg'></div>
+      </div>
+    </div>
+    <div class='indexUp wrap'>
+      <div class="scrollBlind">
+        <div class="btn-group outer" data-toggle="buttons">
+          <label class="btn" role="button">
+            <input id ='searchMapGo'type="radio" name="options"  required="required">
+            <i class="fa fa-map-marker pin" aria-hidden="true"></i>
+          </label>
+          <label class="btn click margin-minus" role="button" >
+            <input  type="radio" name="options" value="0" id='hot-cos'>인기코스
+          </label>
+          <label class="btn margin-minus" role="button">
+            <input  type="radio" name="options" value="1" id='health' >헬스
+          </label>
+          <label class="btn margin-minus" role="button">
+            <input type="radio" name="options" value="3" id='yoga'>요가
+          </label>
+          <label class="btn margin-minus" role="button" >
+            <input  type="radio" name="options" value="4" id='pilates'>필라테스
+          </label>
+          <label class="btn margin-minus" role="button" >
+            <input  type="radio" name="options" value="2" id='spinning'>크로스핏
+          </label>
+        </div>
+        <!-- btn-group -->
+      </div>
+      <!--scrollBlind  -->
+    </div>
+    <!--indexUp wrap  -->
+    <div id='promotion-list-container'>
+      <div id='promotion-in'>
+        <div class='left-promotion main-promotion-heightz'>
+          <img src='../image/hot-cos_m.jpg'>
+        </div>
+      </div>
+      
+    </div>
+    <!-- promotion-list-container -->
+
+  </div>
+  <!-- allList-container -->
+  <!-- Swiper JS -->
+  <script src="../node_modules/swiper/dist/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script id='health-template' type="text/x-handlebars-template">
+    {{#each list}} {{#isIndex @index this}}
+    <div class='go-detail right-promotion main-promotion-height promotion'>
+      {{else}}
+      <div class='go-detail left-promotion main-promotion-height promotion'>
+        {{/isIndex}}
+        <div class='img'>
+             <img  value='{{pno}}' title='{{spono}}' class='img-{{pno}}'
+         {{#if @last}}
+           id='last-promotion'
+         {{else}}
+         {{/if}}>
+        </div>
+        <div class='span'>
+          <span>{{title}}</span>
+        </div>
+      </div>
+      {{/each}}
+  </script>
+  <script src='../js/mainList.js'></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+.outer span {
+  font-size: 17px;
+}
+
+.mypage-title {
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mypage-header {
+	margin: 0;
+  height: 60px;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  line-height: 60px;
+  background-color: white;
+
+}
+.mypage-outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.mypage-btn {
+  margin-left: 5%;
+  color: white;
+  font-size: 12px;
+  background-color:  #f7ac1a;
+  width: 20%;
+  border: 0;
+  outline: 0;
+  height: 30px;
+}
+.btn-group {
+  width:100%;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn-collect {
+  margin-top: 5%;
+  text-align: center;
+  height: 100px;
+}
+
+.btn-foot {
+  color: black;
+  border: 1px solid black;
+  outline: 0;
+  height:30px;
+  background-color: rgba(255, 255, 255, 0)
+}
+
+.mypage-click {
+  width: 50%;
+}
+
+.mypage-outer .inner {
+  padding-top: 10px;
+}
+.mypage-container{
+  margin: 5px 5% 0 5%;
+  position: relative;
+}
+.header {
+  background-color: white;
+}
+.inner {
+  background-color: white;
+}
+
+.outer {
+  background-color: white;
+}
+
+.mypage-title-bottom {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mypage-user-holder {
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #cdcdcd;
+}
+
+.mypage-user-value {
+  left: 400px;
+}
+
+.mypage-outer-bottom {
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  position: absolute;
+}
+.outer {
+	border: solid 1px black;
+}
+
+.mypage-inner-bottom {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.btn-change {
+  margin-top: 10px;
+}
+.inner #user {
+  padding-bottom: 10px;
+}
+#mypage-infoinfo {
+  float: left;
+}
+#mypage-security {
+  float: right;
+}
+#mypage-userBorder {
+  font-size: 20px;
+  padding: 5px 0px;
+  margin-top: 5px;
+  color:  #f7ac1a;
+}
+#mypage-securityBorder {
+  font-size: 20px;
+  padding: 5px 0px;
+  margin-top: 5px;
+}
+
+#mypage-logo {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0;
+}
+
+#mypage-logo a {
+  color: #f7ac1a;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 60px;
+}
+
+#mypage-user-delete {
+  color: black;
+}
+
+#mypage-foot-outer {
+  background-color: rgba(255, 255, 255, 0)
+}
+
+#mypage-user-password {
+  margin-left: 5%;
+  margin-right: 5%;
+}

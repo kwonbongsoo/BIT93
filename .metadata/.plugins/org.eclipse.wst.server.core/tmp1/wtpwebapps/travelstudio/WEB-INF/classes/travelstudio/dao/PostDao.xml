@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="travelstudio.dao.PostDao">
+  
+  <resultMap type="post" id="postMap">
+    <id column="postno" property="postno"/>
+    <result column="title" property="title"/>
+    <result column="badge" property="badge"/>
+    <result column="tag" property="tag"/>
+    <result column="sdt" property="sdt"/>
+    <result column="edt" property="edt"/>
+    <result column="cont" property="cont"/>
+    <result column="capt" property="capt"/>
+    <result column="detail" property="detail"/>
+    <result column="ispublic" property="ispublic"/>
+    <result column="mno" property="mno"/>
+    <result column="good" property="good"/>
+    <result column="adrs" property="address"/>
+    <result column="confirm" property="confirm"/>
+    <result column="postcont" property="postcont"/>
+    <result column="detailcont" property="detailcont"/>
+    <association property="writer" javaType="Member">
+      <id property="mno" column="mno" />
+      <result property="email" column="email" />
+      <result property="path" column="path" />
+      <result property="alias" column="alias" />
+    </association>
+  </resultMap> 
+
+    <select id="info1" resultMap="postMap" parameterType="String">
+    select * from post natural join member where postno=#{number}
+  </select>
+  
+  <select id="search" resultMap="postMap" parameterType="String">
+    select * from post natural join member where title like concat('%',#{keyword},'%')
+  </select>
+  
+  <select id="selectOneUserPost" resultMap="postMap" parameterType="int">
+    select * from post natural join member where mno=#{number} order by postno desc
+  </select>
+  
+  <select id="selectCoworkPost" resultMap="postMap" parameterType="int">
+    select post.postno, title, post.cont, post.good, m.path, m.alias, m.email, cowork.confirm
+    from post left outer join cowork on post.postno=cowork.postno
+    left outer join member m on post.mno=m.mno
+    where cowork.mno=#{no}
+  </select>
+    
+    <select id="requestedPost" resultMap="postMap" parameterType="int">
+    select * from post where postno=#{postno} order by postno desc
+  </select>
+    
+<insert id="insert" parameterType="post" useGeneratedKeys="true" keyColumn="postno" >
+    insert into post(postno, title, sdt, edt, cont, pdt, mno, tag) 
+    values(null, #{title}, #{sdt},#{edt},#{cont},'2017-07-07',#{mno}, #{tag})
+    <selectKey keyProperty="postno" resultType="int">
+        SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="updateLike" parameterType="post">
+    update post set good=#{good} where postno=#{postno}
+  </update>
+  
+  <select id="selectOne" resultMap="postMap" parameterType="String">
+    select * 
+    from post natural join member where postno=#{postno}
+  </select>
+  
+  <select id="selectKoreaList" resultMap="postMap">
+    select p.postno, p.cont, p.title, p.good, m.path, m.alias, d.adrs
+    from post p 
+    inner join member m on m.mno = p.mno
+    inner join detail d on p.postno = d.postno
+    group by d.adrs, p.postno
+    having d.adrs like '%한국%' or d.adrs like '%대한민국%'
+    order by p.postno desc
+    limit 3;
+  </select>
+  
+  <select id="selectForeignList" resultMap="postMap">
+    select p.postno, p.cont, p.title, p.good, m.path, m.alias, d.adrs
+    from post p 
+    inner join member m on m.mno = p.mno
+    inner join detail d on p.postno = d.postno
+    group by d.adrs, p.postno
+    having not d.adrs like '%한국%' and not d.adrs like '%대한민국%'
+    order by p.postno desc
+    limit 11;
+  </select>
+  
+  <select id="selectForeignAllList" resultMap="postMap">
+    select p.postno, p.cont as postcont, d.cont as detailcont, p.title, p.good, p.sdt, p.edt, p.tag, m.path, m.alias, d.adrs
+    from post p 
+    inner join member m on m.mno = p.mno
+    inner join detail d on p.postno = d.postno
+    group by d.adrs, p.postno
+    having not d.adrs like '%한국%' and not d.adrs like '%대한민국%'
+    order by p.postno desc
+  </select>
+  
+    <update id="BackgroundUpdate" parameterType="post">
+    update post set cont=#{cont} where postno=#{postno}
+  </update>
+  
+  <select id="getWriteCount" resultMap="postMap" parameterType="map">
+    select count(*) from post where mno=#{mno}
+  </select>
+  
+   <select id="ListandGood" resultMap="postMap" parameterType="map">
+    select * from post p inner join good g
+                   
+  </select> 
+  
+</mapper>
+
+
+
+

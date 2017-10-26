@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+     crossorigin="anonymous">
+     <style media="screen">
+     div {
+       width: 320px;
+       padding: 0px;
+       margin: 0px;
+     }
+     button {
+       display: inline-block;
+       border: 1px solid gray;
+       box-sizing: border-box;
+       width: 70px;
+       height: 70px;
+       padding: 0px;
+       font-size: 20px;
+       text-align: center;
+       margin: 0px;
+     }
+     </style>
+  </head>
+  <body>
+    <div id="div">
+      <button type="button" class='btn btn-primary'>1</button>
+      <button type="button" class='btn btn-primary'>2</button>
+      <button type="button" class='btn btn-primary'>3</button>
+      <button type="button" class='btn btn-primary'>4</button>
+      <button type="button" class='btn btn-primary'>5</button>
+      <button type="button" class='btn btn-primary'>6</button>
+      <button type="button" class='btn btn-primary'>7</button>
+      <button type="button" class='btn btn-primary'>8</button>
+      <button type="button" class='btn btn-primary'>9</button>
+      <button type="button" class='btn btn-primary'>10</button>
+      <button type="button" class='btn btn-primary'>11</button>
+      <button type="button" class='btn btn-primary'>12</button>
+      <button type="button" class='btn btn-primary'>13</button>
+      <button type="button" class='btn btn-primary'>14</button>
+      <button type="button" class='btn btn-primary'>15</button>
+      <button type="button" class='btn btn-primary'>*</button>
+    </div>
+    <button type="button" class="btn-success" id="btn-s">섞기</button>
+    <script>
+    window.$ = window.jQuery = require('jquery')
+    var div = $('#div')
+
+        var ar,star,tmp,clear = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], cnt = 0
+
+        $('#btn-s').click(() => {
+          ar = shuffleRandom(16);
+          $('.btn').remove()
+          star = starFind(ar)
+          addRandomButton()
+          clickEvent()
+        }) //s btn
+
+        function clickEvent() {
+          if (star == 7 || star == 11) {
+            if (star == 11) {
+              $('#num10').click(() => {
+                minusOne()
+              })
+              $('#num7').click(() => {
+                minusFour()
+              })
+              $('#num15').click(() => {
+                plusFour()
+              })
+            } else {
+              $('#num6').click(() => {
+                minusOne()
+              })
+              $('#num3').click(() => {
+                minusFour()
+              })
+              $('#num11').click(() => {
+                plusFour()
+              })
+            } //if(7 11) else
+          }else if (star == 5 || star == 6 || star == 9 || star == 10) { // if (7 11)
+            if (star == 5) {
+              $('#num4').click(() => {
+                minusOne()
+              })
+              $('#num6').click(() =>{
+                plusOne()
+              })
+              $('#num9').click(() => {
+                plusFour()
+              })
+              $('#num1').click(() => {
+                minusFour()
+              })
+            }else if (star == 6) {
+              $('#num5').click(() => {
+                minusOne()
+              })
+              $('#num7').click(() =>{
+                plusOne()
+              })
+              $('#num10').click(() => {
+                plusFour()
+              })
+              $('#num2').click(() => {
+                minusFour()
+              })
+            }else if (star == 9) {
+              $('#num8').click(() => {
+                minusOne()
+              })
+              $('#num10').click(() =>{
+                plusOne()
+              })
+              $('#num13').click(() => {
+                plusFour()
+              })
+              $('#num5').click(() => {
+                minusFour()
+            })
+          }else {
+            $('#num9').click(() => {
+              minusOne()
+            })
+            $('#num11').click(() =>{
+              plusOne()
+            })
+            $('#num14').click(() => {
+              plusFour()
+            })
+            $('#num6').click(() => {
+              minusFour()
+            })
+          }
+        }else if (star == 4 || star == 8) {
+              if (star == 4) {
+                $('#num0').click(() => {
+                  minusFour()
+                })
+                $('#num8').click(() => {
+                  plusFour()
+                })
+                $('#num5').click(() => {
+                  plusOne()
+                })
+              }else { //8
+                $('#num4').click(() => {
+                  minusFour()
+                })
+                $('#num12').click(() => {
+                  plusFour()
+                })
+                $('#num9').click(() => {
+                  plusOne()
+                })
+              }
+            }else if (star == 1 || star == 2) {
+              if (star == 1) {
+                $('#num0').click(() => {
+                  minusOne()
+                })
+                $('#num2').click(() => {
+                  plusOne()
+                })
+                $('#num5').click(() => {
+                  plusFour()
+                })
+              }else { //2
+                $('#num1').click(() => {
+                  minusOne()
+                })
+                $('#num3').click(() => {
+                  plusOne()
+                })
+                $('#num6').click(() => {
+                  plusFour()
+                })
+              }
+            }else if (star == 13 || star == 14) {
+              if (star == 13) {
+                $('#num12').click(() => {
+                  minusOne()
+                })
+                $('#num14').click(() => {
+                  plusOne()
+                })
+                $('#num9').click(() => {
+                  minusFour()
+                })
+              }else { // 14
+                $('#num13').click(() => {
+                  minusOne()
+                })
+                $('#num15').click(() => {
+                  plusOne()
+                })
+                $('#num10').click(() => {
+                  minusFour()
+                })
+              }
+            } else if (star == 0) {
+            $('#num1').click(() => {
+              plusOne()
+            })
+            $('#num4').click(() => {
+              plusFour()
+            })
+          } else if (star == 3) {
+            $('#num2').click(() => {
+              minusOne()
+            })
+            $('#num7').click(() => {
+              plusFour()
+            })
+          } else if (star == 12) {
+            $('#num8').click(() => {
+              minusFour()
+            })
+            $('#num13').click(() => {
+              plusOne()
+            })
+          } else if (star == 15) {
+            $('#num14').click(() => {
+              minusOne()
+            })
+            $('#num11').click(() => {
+              minusFour()
+            })
+          }
+        }//clickEvent
+        function clearTest() {
+          for (var i = 0; i < 16; i++) {
+            if (ar[i] == clear[i]) {
+              cnt++
+            }
+          }
+          if (cnt == 15) {
+            alert('클리어 하셨습니다 축하합니다.')
+          }else {
+            cnt = 0
+            clickEvent()
+          }
+        }
+        function plusFour() {
+          tmp = ar[star+4]
+          ar[star+4] = ar[star]
+          ar[star] = tmp
+          $('.btn').remove()
+          star = starFind(ar)
+          addRandomButton()
+          clearTest()
+        }
+        function minusFour() {
+          tmp = ar[star-4]
+          ar[star-4] = ar[star]
+          ar[star] = tmp
+          $('.btn').remove()
+          star = starFind(ar)
+          addRandomButton()
+          clearTest()
+        }
+        function minusOne() {
+          tmp = ar[star-1]
+          ar[star-1] = ar[star]
+          ar[star] = tmp
+          $('.btn').remove()
+          star = starFind(ar)
+          addRandomButton()
+          clearTest()
+        }
+        function plusOne() {
+          tmp = ar[star+1]
+          ar[star+1] = ar[star]
+          ar[star] = tmp
+          $('.btn').remove()
+          star = starFind(ar)
+          addRandomButton()
+          clearTest()
+        }
+        function starFind(ar) {
+          for (var i = 0; i < ar.length; i++) {
+            if (ar[i] == 16) {
+              console.log(i)
+              return i
+            }
+          }
+        }
+        function addRandomButton() {
+          for (var i = 0; i < ar.length; i++) {
+            if (ar[i] == 16) {
+              $('<button>').attr('type', 'button')
+                           .attr('class', 'btn btn-primary')
+                           .text('*').appendTo(div)
+            }else {
+              $('<button>').attr('type', 'button')
+                           .attr('class', 'btn btn-primary')
+                           .attr('id', 'num'+i)
+                           .text(ar[i]).appendTo(div)
+            }
+          }//for
+        }
+        function shuffleRandom(n){
+          var ar = new Array();
+          var temp;
+          var rnum;
+
+          //전달받은 매개변수 n만큼 배열 생성 ( 1~n )
+          for(var i=1; i<=n; i++){
+              ar.push(i);
+          }
+
+
+          //값을 서로 섞기
+          for(var i=0; i< ar.length ; i++)
+          {
+              rnum = Math.floor(Math.random() *n); //난수발생
+              temp = ar[i];
+              ar[i] = ar[rnum];
+              ar[rnum] = temp;
+          }
+
+          return ar;
+  }
+    </script>
+  </body>
+</html>

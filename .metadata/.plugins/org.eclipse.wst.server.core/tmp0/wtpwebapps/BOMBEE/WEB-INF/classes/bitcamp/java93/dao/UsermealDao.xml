@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mybatis에서 DAO 구현체를 자동으로 만들 때는, SQL 맵퍼 파일의 namespace 값이 DAO 인터페이스와 같아야 
+	한다. -->
+<mapper namespace="bitcamp.java93.dao.UsermealDao">
+	<!-- DB 컬럼과 자바 객체의 프로퍼티를 연결하는 정보 -->
+	<resultMap type="usermeal" id="usermealMap">
+		<id column="day" property="day" />
+		<result column="date" property="date" />
+		<result column="mealpic" property="mealpicture" />
+		<result column="mealkcal" property="mealkcal" />
+		<result column="mealname" property="mealname" />
+		<result column="mealtype" property="mealtype" />
+		<result column="trano" property="trainingNo" />
+		<result column="name" property="name" />
+		<collection property="meal" ofType="Meal">
+			<result column="confirm" property="confirm" />
+			<result column="mealno" property="mealno" />
+			<result column="mealpic" property="mealpicture" />
+			<result column="mealkcal" property="mealkcal" />
+			<result column="mealname" property="mealname" />
+			<result column="mealtype" property="mealtype" />
+		</collection>
+	</resultMap>
+
+	<resultMap type="usermealList" id="usermealMap2">
+		<id column="trano" property="trano" />
+		<result column="pno" property="pno" />
+		<result column="sdt" property="sdt" />
+		<result column="edt" property="edt" />
+		<result column="confirm" property="confirm" />
+		<result column="mno" property="mno" />
+		<result column="tno" property="tno" />
+		<result column="name" property="name" />
+		<result column="titl" property="promotionTitle" />
+		<result column="pimg" property="proImg" />
+		<result column="writerev" property="writerev"/>
+	</resultMap>
+
+	<select id="selectWeeklist" resultMap="usermealMap"
+		parameterType="map">
+		select mealno, mealpic, mealkcal, mealname, mealtype,
+		date, confirm, day
+		from memb_manage
+		where date between #{startDate} and #{endDate} and trano=#{trainingNo}
+	</select>
+
+	<select id="selectPromotionUsername" resultMap="usermealMap2"
+		parameterType="map">
+		select m.name, p.titl, tt.tno
+		from memb m
+		inner join tcher_trainer tt on tt.mno = m.mno
+		inner join promotion p on tt.pno = p.pno
+		where tt.trano=#{trainerNo}
+	</select>
+	
+	<select id="trainingList" resultMap="usermealMap2"
+		parameterType="int">
+		select t.*, m.name, p.titl, i.pimg from tcher_trainer t
+		inner join memb
+		m on t.tno = m.mno
+		inner join promotion p on t.pno =
+		p.pno
+		inner join promotionimg i on t.pno = i.pno
+		where t.mno = #{no} and
+		i.titlepic = 1
+		order by t.sdt desc;
+	</select>
+
+	<select id="usersList" resultMap="usermealMap2" parameterType="int">
+		select t.*, m.name, p.titl, i.pimg from tcher_trainer t inner join
+		memb
+		m on t.mno = m.mno
+		inner join promotion p on t.pno = p.pno
+		inner
+		join promotionimg i on t.pno = i.pno
+		where t.tno = #{no} and i.titlepic
+		= 1
+		order by t.sdt desc;
+	</select>
+
+	<insert id="insert" parameterType="usermeal" useGeneratedKeys="true"
+		keyColumn="mealno" keyProperty="mealno">
+		insert into
+		memb_manage(mealtype,
+		mealpic, mealkcal, mealname, date, day, confirm, trano)
+		values(#{mealtype}, #{mealpicture}, #{mealkcal},
+		#{mealname},
+		curdate(), #{day}, 0, #{trainingNo})
+	</insert>
+
+	<update id="update" parameterType="usermeal">
+		update memb_manage set
+		mealpic=#{mealpicture},
+		mealkcal=#{mealkcal},
+		mealname=#{mealname},
+		trano=#{trainingNo}
+		where mealno=#{mealno}
+	</update>
+
+	<update id="nopicUpdate" parameterType="usermeal">
+		update memb_manage set
+		mealpic=#{mealpicture},
+		mealkcal=#{mealkcal},
+		mealname=#{mealname},
+		trano=#{trainingNo}
+		where mealno=#{mealno}
+	</update>
+
+	<update id="confirm" parameterType="int">
+		update memb_manage set
+		confirm=1
+		where mealno=#{mealno}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from memb_manage where
+		mealno=#{mealno}
+	</delete>
+
+</mapper>

@@ -1,0 +1,42 @@
+table, td {
+  border: 2px solid black;
+  padding: 0;
+  margin: 0;
+}
+table {
+  width: 200px;
+  table-layout: fixed;
+}
+td {
+  width:50px;
+  height:50px;
+}
+
+button {
+  font-size: 30px;
+  width:50px;
+  height:50px;
+  padding: 0;
+  margin: 0;
+  background-color: orange;
+}
+.num {
+  background-color: yellow;
+}
+.calc {
+  background-color: lightgray;
+}
+#printNum {
+  text-align: right;
+  font-size: 40px;
+  table-layout: fixed;
+}
+#zero, #empty{
+  width:104px;
+  height:50px;
+}
+#printNum {
+  height: 100px;
+  width: 200px;
+  word-wrap: break-word;
+}

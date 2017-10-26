@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 웹 서버에서 html 을 생성하지 않고,
+         지금 처럼 html 파일을 그대로 웹브라우저에게 전달하는 경우
+          웹브라우저가 이 html을 제대로 처리할 수 있도록
+          html 파일 안에 어떤 문자 지밥으로 인코딩 했는지 알려줘야 한다. -->
+    <meta charset="utf-8">
+    <title>GET 테스트</title>
+  </head>
+  <body>
+    <h1>GET 요청</h1>
+    <form action="http://localhost:8888/get.do" method="get">
+      이름: <input type="text" name="name"><br>
+      나이: <input type="text" name="age"><br>
+      전화: <input type="text" name="tel"><br>
+      <button>GET 전송</button>
+    </form>
+    <h1>POST 요청</h1>
+    <form action="http://localhost:8888/post.do" method="post">
+      이름: <input type="text" name="name"><br>
+      나이: <input type="text" name="age"><br>
+      전화: <input type="text" name="tel"><br>
+      <button>POST 전송</button>
+    </form>
+  </body>
+</html>

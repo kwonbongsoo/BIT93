@@ -1,0 +1,93 @@
+
+      body {
+        font-family: '맑은 고딕', '굴림체', 'Apple Gothic Neo', sans-serif;
+        font-size:medium;
+        padding: 10px;
+        margin: 0px;
+      }
+      address {
+        font-style: normal;
+        display: inline;
+      }
+      #main {
+        position: relative;
+        /*border: 1px solid green;*/
+        width: 980px;
+        margin: 0 auto;
+      }
+      #ad > img:last-child {
+        position: relative;
+        left: 10px;
+        top: 20px;
+      }
+      #menu {
+        font-size: 1em;
+          width: 180px;
+          position: absolute;
+
+
+          background-color: lightgray;
+
+
+      }/* 공백이있으면 싱글퍼테이션 씌운다
+      의미
+        => 맑으 ㄴ고딕 폰트를 사용하라. 없다면 다음 폰트를 사용하라
+        => 모두 없다면 웹브라우저에 설정된 sans-serif를 사용하라
+
+      */
+      /*#menu > img {
+        position: relative;
+        left: 50px;
+        top: 10px;
+      }*/
+      #menu ul>li { /* li의  */
+        font-weight: bold;
+      }
+      #menu ol {
+        font-weight: normal;
+      }
+      #content {
+        font-family: 바탕체, 궁서체, 'AppleMyungjo',serif;
+        left: 200px;
+        top: 10px;
+        /*border: 1px solid red;*/
+        margin-left: 190px;
+        min-height: 430px;
+      }
+      #footer {
+        font-size: 80%; /* = 0.8em */
+        clear: left; /* 왼쪽에 이 태그의 내용을 가리는 것이 있다면
+                        그 아래로 위치하도록 이동시킨다.*/
+        text-align: center;
+        left: 10px;
+        top:450px;
+        /*border: 1px solid red;*/
+        margin-right: 40px;
+      }
+      #footer > p {
+        font-style: italic;
+      }
+      #bitcamp {
+        background-color: gray;
+        color: white;
+        border-radius: 4px;
+        padding: 3px 3px 0px 3px;
+      }
+      #company {
+        color: navy;
+      }
+      #ad {
+        position: fixed;
+        left: 35%;
+        top: 20%;
+        /*border: 5px solid orange;*/
+      }
+      #ad > button {
+        background-color: red;
+        color: white;
+        border-style: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        cursor: pointer;
+      }

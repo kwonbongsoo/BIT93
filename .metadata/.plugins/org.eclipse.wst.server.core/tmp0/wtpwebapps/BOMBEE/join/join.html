@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<!-- root element -->
+<head>
+<!-- HTML 문서에 대한 설명 -->
+</head>
+<body>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+	<link rel="stylesheet"
+		href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+	<link rel='stylesheet' href='../css/bombee.css'>
+	<link rel='stylesheet' href='../css/join.css'>
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
+	<div class="join-container">
+		<div class="main-box" id='main-boxs'>
+			<div class="create">
+				<div class='logo'>
+					<div class='inner-logo'>
+						<img class='bombee' src='../image/bombee_title3.png' />
+					</div>
+				</div>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-label click join-font" id='join-user' role="button"> 
+						<input class='joinType' id='user' name='joinType' 
+						       type="radio" value='1' checked>User
+					</label> 
+					<label class="btn btn-label join-font" id='join-trainer'
+						role="button"> 
+						<input class='joinType' id='trainer' name='joinType' 
+						       type="radio" value='2'>Trainer
+					</label>
+				</div>
+				<br> 
+				<i class="fa fa-fw fa-user-o" aria-hidden="true"></i> 
+				<input type="text" class="id" placeholder="id"/>
+				
+				<i class="fa fa-fw fa-user-o" aria-hidden="true"></i> 
+				<input type="text" class="user" placeholder="username" /> 
+				
+				<i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i> 
+				<input type="email" class="email" placeholder="your email" /> 
+				
+				<i class="fa fa-fw fa-lock" aria-hidden="true"></i> 
+				<input type="password" class="pass" placeholder="password" />
+
+				<div class='trainer-join' style="display: none">
+					<i class="fa fa-address-book-o" aria-hidden="true"></i> 
+					<input type="text" class="company_name" placeholder="company name">
+					
+					<i class="fa zip-fa fa-address-book-o" aria-hidden="true"></i>
+					<div class='clearfix zip-around'>
+						<input type="text" class='zip' id="sample2_postcode"
+							placeholder="zip code" disabled> 
+						<input type="button" value='Find'
+							class='btn find-btn' onclick="sample2_execDaumPostcode()" id='addr-find'>
+					</div>
+					
+					<i class="fa fa-address-book-o" aria-hidden="true"></i> 
+					<input type="text" class="address" id="sample2_address"
+						placeholder="address"> 
+					<i class="fa fa-address-book-o" aria-hidden="true"></i> 
+					<input type="text" class="detail_address"
+						id="sample2_addressDetail" placeholder="detail_address">
+					<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
+					<div id="layer" class='zip-layer'
+						style="display: none; position: fixed; overflow: hidden;
+						 z-index: 1; -webkit-overflow-scrolling: touch;">
+						<img
+							src="//t1.daumcdn.net/localimg/localimages/07/postcode/320/close.png"
+							id="btnCloseLayer"
+							style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
+							onclick="closeDaumPostcode()" alt="닫기 버튼">
+					</div>
+				</div>
+
+				<button type='button' id='add-btn' class="join">Create
+					Account</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src='../js/join.js'></script>
+
+</body>
+</html>

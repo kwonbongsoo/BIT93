@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="932" key="DIALOG_X_ORIGIN"/>
+		<item value="497" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="href." key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="href."/>
+			<item value="val()"/>
+			<item value="makeDragable"/>
+			<item value="make"/>
+			<item value="title_file"/>
+			<item value="title"/>
+			<item value="titleFile"/>
+			<item value="add.json"/>
+		</list>
+		<list key="replacehistory">
+			<item value="http://"/>
+			<item value=""/>
+			<item value="no-tcher"/>
+			<item value="no-user"/>
+			<item value="reqdate"/>
+			<item value="fa-fontsize"/>
+			<item value="fa-font"/>
+			<item value="pimg"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="270" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="373" key="DIALOG_HEIGHT"/>
+		<item value="1160" key="DIALOG_X_ORIGIN"/>
+		<item value="308" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel='stylesheet' href='../css/bombee.css'>
+<link rel='stylesheet' href='../css/searchList.css'>
+
+
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="../node_modules/jquery-ui-dist/jquery-ui.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+
+</head>
+<body>
+	<div class='search-list-contatiner'>
+		<div class='header'>
+			<div class="mobile-container">
+				<!-- 새로운 헤더 -->
+				<div class="header-menu-bar">
+					<a id="header-back" href='#'><i
+						class="search-header-font fa fa-dot-circle-o" aria-hidden="true"></i></a>
+					<a id='header-logo'><img src="../image/bombee_title.png" /></a> <a
+						class='header-logo-bee' href='#' id='list-header'> <i
+						class="search-header-font fa fa-th-large" aria-hidden="true"></i>
+					</a> <a class='header-logo-bee' href='#' style='display: none'id='map-header'>
+					 <i class="search-header-font fa fa-map-marker" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+			<!-- 새로운 헤더 끝 -->
+		</div>
+		<div class="btn-group" data-toggle="buttons">
+			<label class="btn" id='trainer' role="button">
+				<input id='trainer'  class='add-class' type="radio" name="options" value="1"
+				required="required">강사
+			</label> <label class="btn click"  id='promotion' role="button"> <input
+				id='promotion' class='add-class'  type="radio" name="options" value="0" checked>프로모션
+			</label>
+		</div>
+		<div class="button-container">
+			<div class="radio-tile-group">
+			
+			<div class="input-container ">
+          <input id="all" class="radio-button" type="radio" name="radio" value='0'/>
+          <div class="radio-tile">
+            <label for="all" class="radio-tile-label">All</label>
+          </div>
+        </div>
+
+				<div class="input-container width">
+					<input id="health" class="radio-button" type="radio" name="radio" value='1'/>
+					<div class="radio-tile">
+						<label for="health" class="radio-tile-label">Health</label>
+					</div>
+				</div>
+
+				<div class="input-container width">
+					<input id="spinning" class="radio-button" type="radio" name="radio"  value='2'/>
+					<div class="radio-tile">
+						<label for="spinning" class="radio-tile-label">Crossfit</label>
+					</div>
+				</div>
+
+				<div class="input-container width">
+					<input id="yoga" class="radio-button" type="radio" name="radio"  value='3'/>
+					<div class="radio-tile">
+						<label for="yoga" class="radio-tile-label">Yoga</label>
+					</div>
+				</div>
+
+				<div class="input-container width">
+					<input id="pilates" class="radio-button" type="radio" name="radio"  value='4'/>
+					<div class="radio-tile">
+						<label for="pilates" class="radio-tile-label">Pilates</label>
+					</div>
+				</div>
+			</div>
+			</div>
+<div>
+  <div class="mainselection">
+  <i class="fa fa-chevron-circle-down fa1" aria-hidden="true"></i>
+  <select id='code-container'>
+    <option id='first'>지역 선택</option>
+  </select>
+</div>
+<div class="mainselection">
+<i class="fa fa-chevron-circle-down fa2" aria-hidden="true"></i>
+  <select  id='si-container'>
+    <option>세부 지역</option>
+  </select>
+</div>
+<div class="mainselection">
+ <i class="fa fa-chevron-circle-down fa3" aria-hidden="true"></i>
+  <select id='dong-container'>
+    <option>동선택</option>
+  </select>
+</div>
+</div>
+		<!-- 지도를 표시할 div 입니다 -->
+		<div id="map" style="width: 100%; height: 350px;"></div>
+		<div id='list-container' style='display:none;'></div>
+		<div id='click-container' style='display:none;'>
+		  <div id='quit-container'>
+		    <i class="fa fa-times" aria-hidden="true" id='quit'></i>
+		  </div>
+		  <div id='addList'></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d0a9bddab20a1619c64b68ece64342c5&libraries=services"></script>
+	 <script id='map-template' type="text/x-handlebars-template">
+   {{#each list}}
+        {{#marker promotionList @last}}
+        {{/marker}}
+    {{/each}}
+  </script>
+  
+  <script id='list-template' type="text/x-handlebars-template">
+   {{#each list}} {{#type promotionList}}
+        {{#each promotionList}}
+       <div class='list-pro list-div' value={{pno}}>
+        <div class='img-div'>
+          <img class='pro-img' src='../upload/{{#each photoList}}{{#iphonesix this}}{{this}}_210{{/iphonesix}}{{#iphonesixs this}}{{this}}_190{{/iphonesixs}}{{#iphonefive this}}{{this}}_170{{/iphonefive}}{{/each}}.png'>
+        </div>
+      <div class='lope'>
+      <div id='list-title1'>{{title}}</div>
+       <div id='list-height'>
+       <div class='inline-block sport'>
+          <img src='{{sport}}'>
+        </div>
+       <div class='inline-block meter1'>{{meter}}M</div>
+       </div>
+      </div>
+      </div>
+          {{/each}}
+          {{else}}
+        {{/type}}
+    {{/each}}
+  </script>
+  
+    <script id='tlist-template' type="text/x-handlebars-template">
+   {{#each list}} {{#type promotionList}}
+        {{#each promotionList}}
+       <div class='list-tra list-div' value='{{tno}}'>
+     <div>
+      <div id='inline-block' class='list-title'>{{title}}</div>
+     </div>
+      <div class='relative'>
+        <div class='t-img'><img src='..{{tiPic}}_190.png' class='timg'></img></div>
+        <div class='intro t-intro inline-block'>{{introduction}}</div>
+        <div id='inline-block' class='list-name'>권봉수</div>
+       </div>
+       <div>
+        <div class='inline-block address'>{{comaddr}}</div>
+        <div class='inline-block meter'>{{meter}}M</div>
+       </div>
+      </div>
+          {{/each}}
+          {{else}}
+        {{/type}}
+    {{/each}}
+  </script>
+  <script id='codeList' type="text/x-handlebars-template">
+  {{#each admVOList.admVOList}}
+    <option value='{{admCode}}'>{{admCodeNm}}</option>
+  {{/each}}
+</script>
+
+<script id='siList' type="text/x-handlebars-template">
+  {{#each admVOList.admVOList}}
+    <option class='selected clicked' value='{{admCode}}'>{{lowestAdmCodeNm}}</option>
+  {{/each}}
+</script>
+<script src="../js/searchList.js"></script>
+</body>
+</html>

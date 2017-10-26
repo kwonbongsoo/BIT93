@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  well-formed XML
+-  XML 기본 작성 규칙에 따라 만든 XML을 말한다
+-  규칙
+  1) 시작 태그와 끝 태그는 반드시 짝을 이뤄야 한다
+-->
+<students>
+ <!--   1) 시작 태그와 끝 태그는 반드시 짝을 이뤄야 한다 -->
+`<!-- 내용이 없을때 끝 태그를 생략할수 있다. 그때는 끝에 슬래시를 붙인다. -->`
+  <student/>
+<!--
+  <student><name>홍길동</student></name>
+   교차하면 안된다  부모 자식 명확해야함-->
+ <student><name>홍길동</name></student>
+
+<!-- 4) < 다음에 공백을 줄 숫 없다.> 앞에는 공백 가능.
+    그냥 < 와 > 사이에 공백을 주지 않으면 해결 될 일이다. -->
+ <student></student>
+
+ <!--
+  
+ -->
+
+
+
+
+</students>

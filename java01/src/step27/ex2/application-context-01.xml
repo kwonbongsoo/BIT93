@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+     <bean id="c1" class="step27.ex2.Car"/>
+     
+     <bean id="c2" class="step27.ex2.Car">
+      <constructor-arg value="티코"/>
+      <constructor-arg value="800"/>
+     </bean>
+     
+     <!-- 생성자의 파라미터의 값을 설정할 때 파라미터 순서를 지정할수 있다. -->
+     <bean id="c3" class="step27.ex2.Car">
+      <constructor-arg index="1" value="235993"/>
+      <constructor-arg index="0" value="bmw"/>
+     </bean>
+     
+     <bean id="c4" class="step27.ex2.Car">
+      <constructor-arg index="1" type="int" value="235993"/>
+      <constructor-arg index="0" type="java.lang.String" value="bmw"/>
+     </bean>
+</beans>

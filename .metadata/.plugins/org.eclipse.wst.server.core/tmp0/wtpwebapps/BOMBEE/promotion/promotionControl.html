@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel='stylesheet' href='../css/bombee.css'>
+ <link rel='stylesheet' href='../css/promotionControl.css'>
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src="../node_modules/jquery-ui-dist/jquery-ui.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script>
+   $(function() {
+	   $('.header').load('../main/header.html')
+   })
+</script>
+</head>
+<body>
+<div class='promotion-control-container'>
+  <div class='header'></div>
+  <div class='bee'></div>
+  <div id="first-line">
+  <div class='inline-block'><span>프로모션 등록 정보</span></div>
+    <div class="mainselection inline-block">
+  <i class="fa fa-chevron-circle-down fa1" aria-hidden="true"></i>
+  <select id='select-container'>
+    <option value=0>등록일순</option>
+    <option value=1>제목순</option>
+  </select>
+</div>
+  </div>
+  <div id='two-line'><button type="button" id='promotion-add'>글쓰기<i class="fa fa-pencil fa1" aria-hidden="true"></i></button></div>
+  <!--  <div id='two-line'><button type="button" class='promotion-delete'>삭제하기<i class="fa fa-trash-o fa1" aria-hidden="true"></i></button></div>-->
+  <div id='list-container'></div>
+  <div class='no-alram' style='display: none'>
+			<i class="fa fa-meh-o no-alram-size" aria-hidden="true"></i> <span
+				class='no-alram-cont'>앗! 작성한 프로모션이 없습니다!</span>
+		</div>
+</div>
+
+  <script id='list-template' type="text/x-handlebars-template">
+	{{#each list}}
+       <div class='list-pro list-div' value={{pno}}>
+        <div class='img-div'>
+          <img class='pro-img' src='../upload/{{titlePic}}{{#iphonesix this}}_210{{/iphonesix}}{{#iphonesixs this}}_190{{/iphonesixs}}{{#iphonefive this}}_170{{/iphonefive}}.png' value='{{pno}}'>
+					<div class="fa fa-times-circle" aria-hidden="true"></div>
+        </div>
+			<div class='content-form'>
+      	<div id='list-title1'>{{title}}</div>
+       	<div id='list-height'>
+       	<div class='inline-block time'>{{sdt}}~{{edt}}</div>
+			</div>
+       </div>
+      </div>
+      {{/each}}
+  </script>
+  <script src="../js/promotionControl.js"></script>
+</body>
+</html>

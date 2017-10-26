@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+  href="../node_modules/jquery-ui-dist/jquery-ui.css">
+<link rel="stylesheet"
+  href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel='stylesheet' href='../css/bombee.css'>
+<link rel="stylesheet"
+  href="../node_modules/swiper/dist/css/swiper.min.css">
+
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src='../node_modules/jquery-ui-dist/jquery-ui.min.js'></script>
+<script src="../node_modules/swiper/dist/js/swiper.min.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../node_modules/sweetalert2/dist/sweetalert2.css">
+<link rel='stylesheet' href='../css/promotionAdd.css'>
+
+</head>
+<body>
+  <div class="projectAdd-container">
+    <div class='header'></div>
+    <!-- header -->
+
+    <div class='projectAdd-top'>
+      <div class='topClose' >
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+
+      <div class='save' >
+        Save
+      </div>
+
+    </div>
+
+    <div class='projectAdd-In'>
+
+      <div class='imageAdd'>
+      <p><i class="fa fa-bolt" aria-hidden="true"></i> 대표 이미지를 선택해 주세요.</p>
+        <input id='image_upload' type='file' name="files" multiple>
+        <div class="swiper-container">
+          <div class="swiper-wrapper" id='selectedFiles'>
+
+            <div class='imageAdd-plus swiper-slide'>
+              <label  for='image_upload' class='AddCamera'>
+                <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+              </label>
+            </div>
+
+            <!-- <div class="imageAdd-image swiper-slide">Slide 1
+              <p><i class="fa fa-times AddRemove selFile" aria-hidden="true"></i></p>
+            </div> -->
+
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+
+      <div class='title'>
+        <div class='promotion-icon' >
+          <i class="fa fa-tag" aria-hidden="true"></i>
+        </div>
+        <input class='titleInput titleInput-updateColor' type="text" placeholder="Title">
+      </div>
+
+      <div class='date'>
+        <div class='start-date'>
+          <div class='promotion-icon'>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </div>
+          <input class='dateStart dateStart-updateColor' type="text" id="datepicker-start" placeholder="Start-Date ">
+          <div class='arrowStart'>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class='end-date'>
+          <div class='promotion-icon'>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </div>
+          <input class='dateEnd dateEnd-updateColor' type="text" id="datepicker-end" placeholder="End-Date "  required>
+          <div class='arrowEnd'>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class='price'>
+        <div class='promotion-icon'>
+          <i class="fa fa-krw" aria-hidden="true"></i>
+        </div>
+        <input class='priceIn priceIn-updateColor' type="number" placeholder="Price">
+      </div>
+
+      <div class='company_address'>
+        <div class='promotion-icon'>
+          <i class="fa fa-map-marker fa-fontsize" aria-hidden="true"></i>
+        </div>
+        
+        <div class='companyAddress'>
+          <p id='company' style="font-weight: 600; font-size: 1.4rem; margin: 0px;"></p>
+          <p id='address' style="margin: 0px;"></p>
+        </div>
+       
+      </div>
+
+      <div class='contents'>
+        <textarea class='promotionText promotionText-updateColor' placeholder="프로모션 내용을 등록해 주세요"></textarea>
+      </div>
+
+    </div>
+  </div>
+  <!-- container -->
+  <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e93af6b0f8e2ad445bda7e9b6a416ad1&libraries=services"></script>
+  <script src="../js/promotionAdd_update.js"></script>
+</body>
+
+ <script id = 'update-template' type='text/x-handlebars-template'>
+  {{#each promotionList}}
+    {{#each photoList}}
+      <div class='imageAdd-image swiper-slide '>
+        <img src='/upload/{{this}}_promotion.png' id={{this}} data-file={{this}} value={{this}} class='title-image' title='Click to remove'>
+        <p>
+          <i class='fa fa-times selFile' aria-hidden='true' value='{{this}}'></i>
+        </p>
+      </div>
+    {{/each}}
+  {{/each}}
+</script>
+</html>

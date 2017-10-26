@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <bean id="e1" class="step27.ex2.Engine" p:valve="16" p:cylinder="8"/>
+        <bean id="e2" class="step27.ex2.Engine" p:valve="32" p:cylinder="16"/>
+        
+        <bean id="t1" class="step27.ex2.Tire" p:maker="비트타이어" p:inch="14"/>
+        
+        <!-- 배열 프로퍼티 값 -->
+        <bean id="c3" class="step27.ex2.Car" p:model="티코" p:cc="800" p:engine-ref="e2"/>
+        <bean id="c1" class="step27.ex2.Car">
+          <property name="model" value="소나타"/>
+          <property name="cc" value="2000"/>
+          <property name="engine" ref="e1"/>
+          <property name="tires">
+            <array>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="15"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="15"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="15"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="15"/>
+              <ref bean="t1"/>
+            </array>
+          </property>
+        </bean>
+        <!-- 새 Engine 객체를 만들어서 넣는다 -->
+        <bean id="c2" class="step27.ex2.Car">
+          <property name="model" value="개지리는차"/>
+          <property name="cc" value="30000"/>
+          <property name="engine" ref="e1"/>
+          <!-- <property name="engine">
+            <bean class="step27.ex2.Engine" p:valve="16" p:cylinder="8"/>
+          </property> -->
+          <property name="tires">
+            <array>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="14"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="14"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="14"/>
+              <bean class="step27.ex2.Tire" p:maker="비트타이어" p:inch="14"/>
+            </array>
+          </property>
+        </bean>
+        
+        
+        <bean id="c4" class="step27.ex2.Car">
+          <property name="model" value="개지리는차"/>
+          <property name="cc" value="30000"/>
+          <property name="engine">
+            <bean class="step27.ex2.Engine" p:valve="16" p:cylinder="8"/>
+          </property>
+        </bean>
+                            
+         
+</beans>

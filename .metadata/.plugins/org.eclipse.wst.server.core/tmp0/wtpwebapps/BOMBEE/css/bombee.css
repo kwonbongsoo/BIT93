@@ -1,0 +1,469 @@
+/*iphone5*/
+@media ( min-device-width : 320px) and (max-device-width: 374px) {
+  body {
+    font-size: 13px;
+    height: 100%;
+  }
+  .container { 
+    min-width: 320px;
+    max-width: 374px;
+    padding: 0;
+  }
+  .header-edit {
+		height: 28.8px;
+	  line-height: 1.3;
+	  font-size: 1.6rem;
+	}
+	.profile-bell {
+    top: 55px;
+    left: 4px;
+	}
+	.profile-user {
+    top: 55px;
+    right: 0;
+	}
+	.mobile-container .alram-on {
+    top: 27%;
+    width: 22px;
+    height: 22px;
+    line-height: 1.4;
+	}
+	.mobile-container .chat-alram-on {
+    top: 27%;
+    width: 22px;
+    height: 22px;
+    line-height: 1.4;
+	}
+	.header-menu-ul .header-font-size {
+	font-size: 2.8rem;
+	}
+	.header-profile {
+		height: 90px;
+	}
+}
+
+/*iphone6*/
+@media ( min-device-width : 375px) and (max-device-width: 413px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    min-width: 375;
+    max-width: 413;
+    padding: 0;
+  }
+	.header-edit {
+		height: 37.954px;
+	  line-height: 1.6;
+	  font-size: 2rem;
+	}
+	.profile-bell {
+    top: 75px;
+    left: 8px;
+	}
+	.profile-user {
+    top: 75px;
+    right: 0;
+	}
+	.mobile-container .alram-on {
+    top: 30%;
+    width: 24px;
+    height: 24px;
+    line-height: 1.5;
+	}
+	.mobile-container .chat-alram-on {
+    top: 30%;
+    width: 24px;
+    height: 24px;
+    line-height: 1.5;
+	}
+	.header-menu-ul .header-font-size {
+		font-size: 3.2rem;
+	}
+	.header-profile {
+		height: 117.5px;
+	}
+}
+
+/*iphone6 plus*/
+@media ( min-device-width : 414px) and (max-device-width: 735px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 768px;
+    padding: 0;
+  }
+	.header-edit {
+		height: 43.797px;
+	  line-height: 1.8;
+	  font-size: 2rem;
+	}
+	.profile-bell {
+    top: 80px;
+    left: 10px;
+	}
+	.profile-user {
+    top: 80px;
+    right: 0;
+	}
+	.header-profile {
+    height: 137px;
+	}
+	.mobile-container .alram-on {
+    top: 30%;
+    width: 27px;
+    height: 27px;
+    line-height: 1.6;
+	}
+	.mobile-container .chat-alram-on {
+    top: 30%;
+    width: 27px;
+    height: 27px;
+    line-height: 1.6;
+	}
+	.header-menu-ul .header-font-size {
+		font-size: 3.5rem;
+	}
+}
+
+.container {
+  padding: 0;
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+html {
+  font-family: ‘Noto Sans KR’;
+}
+
+body {
+  margin: 0px;
+  width: 100%;
+  height: auto;
+}
+
+
+/* float 시 div 높이 만들어 주기*/
+
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.outer {
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+}
+
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.centered {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 1em;
+  color: white;
+}
+
+.header-logo-bee .header-font {
+  font-size: 3.5rem;
+  color: white;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-container #footer-last-tomato {
+  margin: 0%;
+}
+
+.mobile-container * {
+  box-sizing: border-box;
+}
+
+.main-container .mobile-container {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  background: white;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.mobile-container .header-menu-bar {
+  width: 100%;
+  height: 60px;
+  background: #F7AC1A;
+  z-index: 5;
+  text-align: center;
+  position: relative;
+}
+
+.header-menu-bar img {
+  margin-top: 5px;
+  width: 200px;
+  height: 50px;
+}
+
+.header-menu-button {
+  width: 40px;
+  height: 40px;
+  background: #F7AC1A;
+  top: 10px;
+  left: 15px;
+  position: absolute;
+}
+
+.header-menu-button:hover {
+  cursor: pointer;
+}
+
+.header-menu-button:before, .header-menu-button:after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: white;
+  display: block;
+  position: absolute;
+  left: 5px;
+  transition: all .3s ease-in-out;
+}
+
+.header-menu-button:before {
+  top: 13px;
+}
+
+.header-menu-button:after {
+  top: 27px;
+}
+
+.header-menu-button-open:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header-menu-button-open:after {
+  transform: rotate(135deg) translate(-5px, 5px);
+}
+
+.header-menu-items {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  padding-right: 55px;
+  padding-left: 55px;
+  padding-bottom: 32%;
+  top: 60px;
+  font-size: 1.5em;
+  color: white;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  height: auto;
+  max-height: 0px;
+  opacity: 0;
+}
+
+.header-menu-items-open {
+  opacity: 1;
+  max-height: 3000px;
+  transition: all .5s ease-in-out;
+}
+
+.header-menu-items ul li {
+  display: block;
+  padding: 20px 15px;
+  border-bottom: 1px solid white;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.header-menu-items ul li: hover {
+  border-bottom: solid 2px #F7AC1A;
+}
+
+.indexUp {
+  z-index: 6;
+}
+
+@keyframes header-menu-item-animation {
+  0% {
+    transform: translate(-300px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+.header-menu-items-open ul li:nth-of-type(0) {
+  animation: .8s ease-in-out .0s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(1) {
+  animation: .7s ease-in-out .1s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(2) {
+  animation: .6s ease-in-out .2s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(3) {
+  animation: .5s ease-in-out .3s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(4) {
+  animation: .4s ease-in-out .4s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(5) {
+  animation: .3s ease-in-out .5s forwards header-menu-item-animation;
+}
+
+.header-menu-items-open ul li:nth-of-type(6) {
+  animation: .2s ease-in-out .6s forwards header-menu-item-animation;
+}
+
+.header-up {
+  color: white;
+  font-size: 40px;
+  position: fixed;
+  left: 48%;
+}
+
+.header-menu-ul {
+  padding: 0;
+}
+
+#header-search-bar {
+  font-size: 1.5em;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-bottom: 2px white solid;
+}
+
+#header-search-bar:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.header-logo-bee {
+  position: absolute;
+  right: 5%;
+  top: 11%;
+  line-height: 60px;
+}
+
+.header-menu-ul .profile {
+  position: relative;
+  margin: 0;
+}
+
+.header-profile {
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header-profile .header-user, .header-edit .user-edit {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header-menu-ul .header-edit {
+	position: absolute;
+  top: 64%;
+  right: 22%;
+  width: 16%;
+  border-radius: 50%;
+  border: 4px solid white;
+  overflow: hidden;
+	text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.header-menu-ul .profile-bell,
+.header-menu-ul .profile-user {
+    position: absolute;
+} 
+
+.header-menu-ul .user-name {
+    font-size: 1.6rem;
+    margin-top: 3%;
+}
+
+.header-menu-ul .header-login {
+    display: inline-block;
+    margin-top: 4%;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 1% 4%;
+    font-size: 1.6rem;
+}
+
+.file .profile-img {
+  opacity: 0;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.upload {
+	display: none;
+}
+
+.header-menu-ul .header-font-size {
+	color: white;
+}
+
+.mobile-container .alram-on {
+	position: absolute;
+	display: inline-block;
+	background-color: #fd4d06;
+	border-radius: 50%;
+	font-size: 1.6rem;
+	text-align: center;
+	left: 10%;
+}
+
+.mobile-container .chat-alram-on {
+	position: absolute;
+	display: inline-block;
+	background-color: #fd4d06;
+	border-radius: 50%;
+	font-size: 1.6rem;
+	text-align: center;
+	left: 64%;
+  top: -4%;
+  font-weight: 600;
+  color: white;
+}
+
+
+
+
+
+/**/
+
+
+

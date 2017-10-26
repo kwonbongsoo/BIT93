@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--
+XML (Extensible Markup Language)
+  => 구조를 갖춘 데이터를 표현하기 위해 만들어진 형식이다.
+  => 애플리케이션 간에 데이터를 교환하는 용도 이다.
+
+XML 문서 작성 규칙
+  1) XML 선언부
+   => 선언부 앞에 어떤 값도 와서는 안된다.
+   => version: 값은 1.0만 가능하다 (필수 속성)
+   => encoding: XML 문서가 어떤 문자 집합으로 인코딩 되었는지 지정한다
+    선택속성
+      생략하면 기본 값이 "UTF-8" 이다
+   => standalone
+    xml문서를 읽을 때 참조할 다른 파일이 있는지 여부
+      선택속성
+        생략하면 기본 값이 "no"이다
+  2) XML 문서 형식
+   => XML 문서의 루트 태그와 DTD 정보를 선언한다.
+    <!DOCTYPE 루트태그명 PUBLIC/SYSTEM "공인이름" "DTD URL">
+  => 예) HTML4.x 에서는 다음과 같이 DOCTYPE을 선언한다
+         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+         "http://www.w3.org/TR/html4/strict.dtd">
+
+  3) XML 태그 선언
+   => XML 이름 짓는 규칙에 따라 태그를 선언한다.
+   => 만약 DTD 지정하게 되면 그 DTD 규칙에 따라 태그를 사용
+-->
+<!-->
+  학생 데이터를 구조적으로 표현하기 위해 태그를 사용한 예이다.
+    이런 형식으로 데이터로 표현하면 좋은 이유?
+     => 태그를 사용하여 뎅티ㅓ가 어떤 의미를 지니는지 지정할 수 있다.
+      => 태그를 사용하면 특정 데이터만 추출하기 쉽다.
+     => 태그와 태그는 포함관계로 표현한다
+      => 데이터를 개별 적으로 관리하고 구분하기 쉬워진다
+     => XML 태그는 텍스트로 작성한다.
+      => 전용 프로그램을 사용할 필요가 없다
+      => 텍스트 편집기로 사람이 직접 보고 편집할 수 있다.
+      => 물론, 텍스트로 제어 정보를 표현하면 파일 크기가 커진다.
+      => 모든 프로그래밍 언어는 텍스트 데이터를 처리할 수 있다.
+        즉 프로그래밍 언어와 상관없이 데이터를 자유롭게 주고 받을 수 있
+
+
+  * 바이너리(binary) vs 텍스트(text) 데이터
+    1) 바이너리 데이터
+     => 일반 텍스트 편집기(메모장, vi)로 편집하면 오류가 발생하는 데이터
+      ex) jpeg, gif, mp3, avi, hwp, ppt, doc
+    2) 텍스트 데이터
+     => 일반 텍스트 편집기로 편집할 수 있는 데이터
+      예) .js, html,json
+-->
+<students>
+  <student>
+    <name>홍길동</name>
+    <tel>1111-22222</tel>
+    <email>hong@test.com</email>
+  </student>
+  <student>
+    <name>임꺽정</name>
+    <tel>1111-3333</tel>
+    <email>im@test.com</email>
+  </student>
+</students>

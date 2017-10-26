@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!--  DOM API 사용법 -->
+<!--
+
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML!</title>
+
+  </head>
+  <body>
+
+    <div id="d1" class="c1">d1</div>
+    <input id="i1" type="text"><br>
+    <button id="btn1" type="button">값 알아내기</button>
+    <button id="btn2" type="button">값 변경하기</button>
+
+<script>
+  var d1 = document.querySelector('#d1');
+  var i1 = document.querySelector('#i1');
+  var btn1 = document.querySelector('#btn1');
+  var btn2 = document.querySelector('#btn2');
+  var num = 0
+
+  btn1.addEventListener('click', function() {
+    console.log(d1.innerHTML);
+    console.log(i1.value);
+  });
+
+  btn2.addEventListener('click', function() {
+    d1.innerHTML = num //일반태그 변경
+    i1.value = "유후~~ 변경했네!" //인풋태그 변경
+  });
+
+
+</script>
+
+</body>

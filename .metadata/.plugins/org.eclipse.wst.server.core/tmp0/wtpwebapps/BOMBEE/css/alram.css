@@ -1,0 +1,214 @@
+/*iphone5*/
+@media (min-device-width: 320px) and (max-device-width: 374px) {
+  .alram-list {
+    height: 69px;
+  }
+  .alram-info {
+    height: 69px;
+  }
+  .smile-size {
+    height: 55.7px;
+    font-size: 5.5rem;
+  }
+  .alram-img-size {
+    height: 55.7px;
+  }
+  .alram-content {
+		height: 50px;
+	}
+	.no-alram {
+		width: 67%;
+	}
+	.no-alram-size {
+		font-size: 2.5rem;
+	}
+	.no-alram-cont {
+		font-size: 1.5rem;
+		margin-top: 1%;
+	}
+}
+/*iphone6*/
+@media (min-device-width: 375px) and (max-device-width: 413px) {
+  .alram-list {
+    height: 80px;
+  }
+  .alram-info {
+    height: 80px;
+  }
+  .smile-size {
+    height: 64.7px;
+    font-size: 6.2rem;
+  }
+  .alram-img-size {
+    height: 64.7px;
+  }
+  .alram-content {
+		height: 56px;
+	}
+	.no-alram {
+		width: 64%;
+	}
+	.no-alram-size {
+		font-size: 2.6rem;
+	}
+	.no-alram-cont {
+		font-size: 1.7rem;
+		margin-top: 1%;
+	}
+}
+/*iphone6 plus*/
+@media (min-device-width: 414px) and (max-device-width: 767px) {
+  .alram-list {
+    height: 89px;
+  }
+  .alram-info {
+  	height: 89px;
+  }
+  .smile-size {
+    height: 71.7px;
+    font-size: 7rem;
+  }
+  .alram-img-size {
+    height: 71.7px;
+  }
+  .alram-content {
+		height: 60px;
+	}
+	.no-alram {
+		width: 62%;
+	}
+	.no-alram-size {
+		font-size: 3rem;
+	}
+	.no-alram-cont {
+		font-size: 1.8rem;
+		margin-top: 2%;
+	}
+}
+
+.alram-img-size {
+	float: left;
+  width: 17.3%;
+  margin: 2%;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.smile-size {
+	float: left;
+  width: 17.2%;
+  margin: 2%;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.alram-img-size img {
+  width: 100%;
+  height: 100%;
+}
+.alram-list {
+  font-size: 1.4rem;
+  width: 100%;
+  position: relative;
+}
+
+.alram-list:first-child {
+  width: 100%;
+  border: none;
+}
+
+.alram-info {
+  width: 78.7%;
+  float: left;
+  border-bottom: 1px solid #eee;
+}
+.alram-info-container {
+	position: relative;
+}
+
+.cancle-btn-form {
+  display: inline-block;
+  width: 21%;
+  height: 100%;
+  float: right;
+  padding: 10% 8%;
+}
+.alram-info-container .cancle {
+  color: #666;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.alram-content {
+	display: inline-block;
+	padding: 5% 2%;
+	width: 79%;
+}
+
+.alram-content .name {
+	font-weight: 600;
+}
+
+.alram-content .kinds {
+	font-weight: 600;
+}
+
+.alram-date {
+  position: absolute;
+  color: #777;
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 24%;
+  bottom: 9%;
+  left: 23%;
+}
+
+.alram-time {
+  position: absolute;
+  color: #777;
+  font-size: 1.1rem;
+  display: inline-block;
+  width: 15%;
+  bottom: 9%;
+  left: 40%;
+}
+.no-alram {
+	color: #777;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-alram-cont {
+	float: right;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

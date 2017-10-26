@@ -1,0 +1,275 @@
+@media ( min-device-width : 320px) and (max-device-width: 374px) {
+  .inline-block span {
+    margin-left: 19px;
+    font-size: 1.86rem;
+	}
+	.bee {
+		margin-top: 4%;
+	}
+		.no-alram {
+		width: 76%;
+	}
+	.no-alram-size {
+		font-size: 2.5rem;
+	}
+	.no-alram-cont {
+		font-size: 1.5rem;
+		margin-top: 1%;
+	}
+}
+/*iphone plus*/
+@media ( min-device-width : 375px) and (max-device-width: 413px) {
+  .inline-block span {
+    margin-left: 19px;
+    font-size: 2.3rem;
+	}
+	.no-alram {
+		width: 74%;
+	}
+	.no-alram-size {
+		font-size: 2.8rem;
+	}
+	.no-alram-cont {
+		font-size: 1.7rem;
+		margin-top: 1%;
+	}
+}
+
+@media ( min-device-width : 414px) and (max-device-width: 735px) {
+  .inline-block span {
+    margin-left: 19px;
+    font-size: 2.6rem;
+	}
+	.no-alram {
+		width: 71%;
+	}
+	.no-alram-size {
+		font-size: 3rem;
+	}
+	.no-alram-cont {
+		font-size: 1.8rem;
+		margin-top: 1.5%;
+	}
+}
+
+select option {
+	font-size: 1.3rem;
+}
+.mainselection {
+   margin-left : 12%;
+   margin-top: 20px;
+   display: inline-block;
+   overflow:hidden;
+   width:32%;
+   border-radius: 50px;
+   box-shadow: 1px 1px 1px #f7ac1a;
+   margin-bottom: 5px;
+   position:relative;
+}
+
+.mainselection select {
+  text-align: center;
+  border: 0;
+  color: black;
+  background: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 2px 23px;
+  width: 100%;
+  *width: 100%;
+  *background: #58B14C;
+  -webkit-appearance: none;
+}
+.fa1 {
+  position: absolute;
+  font-size: 15px;
+   top: 14%;
+   left: 85%;
+}
+#first-line {
+  height:40px;
+}
+.inline-block {
+  display: inline-block;
+  margin-bottom: -9px;
+}
+
+.inline-block span {
+  border-bottom: 2px solid #f7ac1a;
+}
+#two-line {
+  text-align:right;
+}
+#promotion-add {
+  margin-right: 15px;
+  margin-top: 10px;
+  width: 32%;
+  border-radius: 50px;
+  position:relative;
+  background-color: white;
+  box-shadow: 1px 1px 1px #f7ac1a;
+  margin-bottom: 5px;
+  border:0;
+  outline:0;
+  font-size: 1.6rem;
+}
+
+.promotion-delete {
+  margin-right: 15px;
+  width: 32%;
+  border-radius: 50px;
+  position:relative;
+  background-color: white;
+  box-shadow: 1px 1px 1px #f7ac1a;
+   margin-bottom: 5px;
+   border:0;
+   outline:0;
+}
+.bee {
+  position: absolute;
+  top: 20vh;
+  width: 75px;
+  height: 80px;
+  background: url(//cdn.ficsystems.com/_new/common/3.0/images/characters/earthday-bee.svg);
+  animation: walk-cycle 0.1s infinite steps(6), move 10s forwards linear;
+  animation-iteration-count:infinite;
+}
+#list-container {
+  margin-top:8%;
+  width:100%;
+  text-align:left;
+}
+
+@-webkit-keyframes walk-cycle {
+  0%   {background-position: 0 0;}
+  100% {background-position: -450px 0;}
+}
+
+@keyframes move {
+  0%    { transform: translate(-5vw, -6vh); }
+  10%   { transform: translate(0vw, -6vh); }
+  20%   { transform: translate(5vw, -6vh); }
+  30%   { transform: translate(10vw, -6vh); }
+  40%   { transform: translate(15vw, -6vh); }
+  50%   { transform: translate(20vw, -6vh); }
+  60%   { transform: translate(25vw, -6vh); }
+  70%   { transform: translate(30vw, -6vh); }
+  80%   { transform: translate(35vw, -6vh); }
+  90%   { transform: translate(40vw, -6vh); }
+  100%  { transform: translate(45vw, -6vh); }
+}
+
+.list-div {
+  background-color: white;
+  z-index: 9999;
+}
+.fa-times-circle {
+	font-size: 2.5rem;
+	color: #777;
+	top:5px;
+	right: 5px;
+	position: absolute;
+	z-index:6
+}
+.list-pro {
+	position:relative;
+	float: left;
+  margin: 1% 0 1% 4%;
+  width: 44%;
+  height: 34vh;
+  display: inline-block;
+  z-index: 3;
+}
+#list-title1 {
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  bottom: 14%;
+}
+#list-height {
+  text-align: center;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+}
+.img-div {
+	width: 100%;
+  overflow: hidden;
+  height: 100%; 
+  text-align: center;
+  position: relative;
+}
+
+ .pro-img {
+  height:100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+ }
+ 
+.time {
+  height:20px;
+  margin: 0 1%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.3rem;
+}
+.list-title1 {
+    height: 40px;
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+    margin: 0 1%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.content-form {
+  position: absolute;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 5%;
+  background-color: white;
+  bottom: 0;
+}
+.background {
+  background-color: #f7ac1a;
+  color:white;
+}
+.border {
+  border: solid 4px #f7ac1a;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.no-alram {
+	color: #777;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-alram-cont {
+	float: right;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

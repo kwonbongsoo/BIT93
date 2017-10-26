@@ -1,0 +1,124 @@
+/*iphone5*/
+@media (min-device-width: 320px) and (max-device-width: 374px) {
+	.list {
+	  height: 139px;
+	}
+	.endDate {
+  	left: 66.5%;
+	}
+	
+	 .no-user {
+    width: 67%;
+  }
+  .no-user-size {
+    font-size: 2.5rem;
+  }
+  .no-user-cont {
+    font-size: 1.5rem;
+    margin-top: 1%;
+  }
+}
+/*iphone6*/
+@media (min-device-width: 375px) and (max-device-width: 413px) {
+	.list {
+	  height: 150px;
+	}
+	.endDate {
+  	left: 64%;
+	}
+	 .no-user {
+    width: 64%;
+  }
+  .no-user-size {
+    font-size: 2.6rem;
+  }
+  .no-user-cont {
+    font-size: 1.7rem;
+    margin-top: 1%;
+  }
+}
+/*iphone6 plus*/
+@media (min-device-width: 414px) and (max-device-width: 767px) {
+	.list {
+	  height: 155px;
+	}
+	.endDate {
+  	left: 62%;
+	}
+	 .no-user {
+    width: 62%;
+  }
+  .no-user-size {
+    font-size: 3rem;
+  }
+  .no-user-cont {
+    font-size: 1.8rem;
+    margin-top: 2%;
+  }
+}
+
+.list {
+position: relative;
+border-bottom: 1px solid silver;
+}
+.user:first-child[.list] {
+margin-top: 3%;
+}
+.list img {
+margin: 2%;
+width: 35%;
+height: 90%;
+}
+
+.promotionName,
+.startDate,
+.endDate,
+.userName,
+.trainer,
+.mealBtn {
+position: absolute;
+font-size: 1.5rem;
+margin-left: 1%;
+}
+
+.userName {
+top: 10%;
+font-size: 1.7rem;
+font-weight: 800;
+}
+.startDate,
+.endDate  {
+top: 47%;
+}
+.promotionName {
+top: 32%;
+font-weight: 600;
+white-space: nowrap;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+word-break: break-word;
+overflow: hidden;
+width: 55%;
+}
+
+.mealBtn {
+bottom: 6.5%;
+right: 3%;
+font-size: 1.4rem;
+font-weight: 600;
+box-shadow: 2px 2px 2px 1px;
+}
+
+.no-user {
+  color: #777;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-user-cont {
+  float: right;
+  display: inline-block;
+}
+

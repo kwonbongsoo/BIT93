@@ -1,0 +1,81 @@
+/*iphone5*/
+@media (min-device-width: 320px) and (max-device-width: 374px) {
+  .main-container #meeting,
+  .main-container #management {
+    width: 170px;
+  }
+  #bg-img {
+    height: 568px;
+  }
+  #body-img {
+    height: 568px;
+  }
+}
+/*iphone6*/
+@media (min-device-width: 375px) and (max-device-width: 413px) {
+  .main-container #meeting,
+  .main-container #management {
+    width: 199px;
+  }
+  #bg-img {
+    height: 667px;
+  }
+  #body-img {
+    height: 667px;
+  }
+}
+/*iphone6 plus*/
+@media (min-device-width: 414px) and (max-device-width: 767px) {
+  .main-container #meeting,
+  .main-container #management {
+    width: 220px;
+  }
+  #bg-img {
+    height: 736px;
+  }
+  #body-img {
+    height: 736px;
+  }
+}
+.main-container {
+  position: relative;
+}
+.main-container .header {
+  z-index: 3;
+}
+.body-outer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.body-inner .meeting {
+  position: absolute;
+  margin: 41% 0 0 9%;
+  z-index:6;
+}
+
+.body-inner .management {
+  position: absolute;
+  margin: 92.5% 0 0 38%;
+  z-index:6;
+}
+
+#bg-img{
+	position: absolute;
+  background-color:black;
+  top: 0;
+  width: 100%;
+  opacity:0.7;
+}
+#body-img{
+	opacity:0.5;
+	position: absolute;
+  top: 0;
+  z-index: 0;
+  display: block;
+  margin: 0 auto;
+  vertical-align: middle;
+  width: 100%;
+  background-repeat: no-repeat;
+}

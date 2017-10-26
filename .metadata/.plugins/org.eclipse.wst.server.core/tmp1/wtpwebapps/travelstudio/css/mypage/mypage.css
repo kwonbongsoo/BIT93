@@ -1,0 +1,657 @@
+
+  body {
+      margin: 0;
+    }
+
+*, *:before, *:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+img, a, abbr, acronym, address, applet,
+article, aside, audio, b, big, blockquote,
+body, canvas, caption, center, cite, code,
+dd, del, details, dfn, div, dl, dt, em,
+embed, fieldset, figcaption, figure, footer,
+form, h1, h2, h3, h4, h5, h6, header, hgroup,
+html, i, iframe, img, ins, kbd, label, legend, li,
+mark, menu, nav, object, ol, output, p, pre, q, ruby,
+s, samp, section, small, span, strike, strong, sub,
+summary, sup, table, tbody, td, tfoot, th, thead,
+time, tr, tt, u, ul, var, video {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+a {
+  color: inherit;
+}
+a:link {
+  border: none;
+  outline: 0;
+}
+
+a:-webkit-any-link {
+  /*color: -webkit-link;*/
+  cursor: auto;
+  text-decoration: none;
+}
+#header{
+  height: 121px;
+}
+#container{
+width: 1244px;
+margin-left: auto;
+margin-right: auto;
+
+}
+#write{
+width: 140px;
+height: 40px;
+}
+#header-s{
+  margin-left: 65%;
+}
+#header-padding{
+  width: 5px;
+}
+#mypage{
+  width:100%;
+  height: 100%;
+  padding-top:70px;
+  padding-right:10px;
+}
+#profile{
+  margin-top: 20px;
+ 
+}
+
+
+.profile_photo{
+  width:169px;
+  height:171px;
+  display: inline-block;
+  float: left;
+  /* background: url('./usercircle.png');
+ */
+}
+
+.tit_info{
+	font-size:27px;
+	font-weight: bold;
+	
+}
+
+
+.profile_desc{
+  margin-left: 45px;
+  height:176px;
+  display: inline-block;
+}
+.user_name{
+  font-size: 30px;
+  margin-top: 10px;
+ 
+}
+.info_write{
+  width:160px;
+  display: inline-block;
+  color: #777;
+}
+.info_nation{
+display: inline-block;
+color: #777;
+}
+
+#numberOfFlag {
+	margin-left: 5px;
+}
+/*게시물 없을 때 시작*/
+.mypage-no-data {
+  text-align: center;
+  display: none;
+}
+
+.mypage-no-data-text {
+  font-size: 20px;
+  color: gray;
+}
+
+.mypage-no-data-btn {
+  display: inline-block;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  width: 150px;
+}
+/*게시물 없을 때 끝*/
+
+/**/
+ul > li > img{
+  width:27px;
+  height:27px;
+  display: inline;
+}
+ul> li{
+  display: inline;
+}
+
+#traveled_country{
+	border: 1px solid white;
+	display: inline-block;
+	margin-left:20px;
+}
+/**/
+
+#aa{
+  display: inline-block;
+  height:30px;
+}
+.user_desc{
+  margin-top: 40px;
+}
+.dot{
+  width:27px;
+  height: 27px;
+}
+.card_bottom > img{
+  margin-top: 5px;
+  width: 33px;
+  height: 33px;
+}
+.travel_item{
+  width:255px;
+  display: inline-block;
+  margin-right: 47px;
+}
+.list_img{
+  width:297px;
+  padding-right: 0px;
+  height:255px;
+  object-fit: cover;
+}
+
+
+div.card_title span{
+  width: 230px;
+  height: 30px;
+}
+.card_bottom> span{
+  width: 200px;
+}
+.mypage_list_heart{
+  margin-top: 10px;
+  float: right;
+}
+.list_title > a{
+  font: black;
+}
+.fa fa-align-justify{
+  display: inline-block;
+  float: right;
+}
+.list_title{
+  display: inline-block;
+  width: 240px;
+    font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+}
+#modal{
+  width:100%;
+  height:100%;
+  background-color:gray;
+  position:fixed;
+  z-index: 10;
+  opacity: 0.4;
+  display: none;
+}
+
+#modal2{
+  width:100%;
+  height:100%;
+  background-color:gray;
+  position:fixed;
+  z-index: 10;
+  opacity: 0.4;
+  display: none;
+}
+
+
+
+i{
+  margin-top: 7px;
+  margin-left: 10px;
+}
+.cate{
+display: inline-block;
+float:right;
+align: right;
+padding-right: 4px;
+width: 30px;
+}
+
+@import "compass/css3";
+
+/* Setting things up */
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+/* Important stuff */
+
+nav {
+  position: relative;
+  
+}
+.dropdown-toggle {
+
+  background: white;
+}
+
+
+ul.dropdown {
+  display:none;
+  position: absolute;
+  top: 100%;
+  margin-top: .5em;
+  background: white;
+  min-width: 10em;
+  padding: 5px 13px 5px 13px;;
+  font-size: 16px;
+  z-index: 1000;
+  border:darkgray solid 1px;
+  width:180px;
+
+}
+
+.postNum {
+	font-size: 27px;
+	margin-left: 5px;
+}
+
+.dropdown > li {
+  line-height: 30px;
+  width:100%
+  list-style-type: none;
+    text-decoration: none;
+}
+.dropdown> li > a {
+  width:180px;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+.dropdown > li:hover{
+  background-color: #c7d0dd;
+    color: white;
+}
+.mypage_list_heart {
+	    color: #f4425c;
+}
+
+.travle_list {
+	padding: 30px 0;
+}
+.travle_list_invited {
+	padding: 30px 0;
+	border-bottom: 1px solid #ccc;
+}
+.travle_list_invited .list-title,
+.travle_list .list-title {
+	margin-left: 28px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+}
+
+.item_card {
+  width:280px;
+  margin-left: 28px;
+  position: relative;
+  float: left;
+  margin-top: 20px;
+}
+
+.card_bottom{
+}
+
+.card_desc{
+	margin-left: 10px;
+}
+
+#lock{
+  margin-top: 5px;
+  position: absolute;
+  margin-left: 220px;
+  color:white;
+  display: none;
+}
+
+
+/*팝업 친구 초대하기 시작*/
+.join_user_list > img{
+  width:40px;
+  height:40px;
+}
+#invite_f_container {
+  position: fixed;
+  overflow: hidden;
+  top: 10%;
+  right: 10%;
+  bottom: 85px;
+  left: 10%;
+z-index: 100;
+margin-left: auto;
+margin-right: auto;
+  display: none;
+  background: white;
+  border-radius: 4px;
+  width:400px;
+  min-height:550px;
+  transform: translateY(20px);
+ border: 1px solid #c0cee5;
+box-shadow: 3px 3px 3px #888888;
+}
+
+#invitePro{
+	display:inline-block;
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+	border-radius: 30px;
+	margin-top: 13px;
+}
+
+.f_search{
+  width: 270px;
+  display: block;
+  margin: 0 auto;
+}
+
+.content_a{
+  margin-top: 100px;
+  text-align: center;
+}
+
+#f_search_list {
+	height: 100px;
+}
+
+#invitePro  img{
+	height: 45px;
+	width: 45px;
+  background-size: cover;
+}
+
+.fa-plus-circle:before {
+    content: "\f055";
+    position: absolute;
+    right: 85px;
+    top: 420px;
+}
+
+.save_btn{
+  margin-top: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 275px;
+    height: auto;
+}
+#close1-btn{
+width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid #9cb2d6;
+}
+
+
+input#f_search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 35px;
+  padding: 0 20px;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease;
+  	  opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease;
+  	  opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease;
+  	 opacity: 0;
+     }
+   }
+ }
+
+.f_search-icon{
+  position: relative;
+  float: right;
+  width: 60px;
+  height: 60px;
+  top: -49px;
+  right: -45px;
+}
+
+/*친구 초대하기 서치바 끝*/
+
+
+
+
+/* 공유 share_wrap 시작 */
+#share_wrap{
+  border: 1px solid #c0cee5;
+  width: 480px;
+  height: auto;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 3px 3px 3px #888888;
+  display: none;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 100;
+}
+
+.sns_share{
+  border: 1px solid white;
+  width: 380px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  font-size: 20px;
+
+
+}
+
+.buttons{
+  border: 1px solid white;
+  width: 450px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  color: #9cb2d6;
+}
+
+ #facebook_button, #twitter_button{
+   border: 5px solid #9cb2d6;
+   border-radius: 50%;
+   width:50px;
+   height:50px;
+   background-color: white;
+   margin-left: 20px;
+   margin-right: 20px;
+
+ }
+
+
+
+ .link_copy{
+   border: 1px solid white;
+   width: 450px;
+   height: auto;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 30px;
+ }
+
+ #word_copy{
+   border:1px solid white;
+   width:auto;
+   height:auto;
+   font-size: 20px;
+   margin-bottom: 20px;
+
+ }
+
+.buttons>button>i{
+  margin-left: -0px;
+}
+
+
+ #close2_button{
+   width:120px;
+   height:40px;
+   border-radius: 20px;
+   background-color: white;
+   border: 2px solid #9cb2d6;
+   margin-top: 40px;
+ }
+ /*여행기 공유하기 팝업 끝*/
+
+
+/*여행기 삭제하기 팝업 시작*/
+
+#delete_wrap {
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #c0cee5;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+    display: none;
+    background: white;
+    width:450px;
+    height:150px;
+z-index: 100;
+    text-align: center;
+    padding:15px;
+
+}
+
+#no-btn{
+  width:100px;
+  height:37px;
+  border-radius: 20px;
+
+  border: 2px solid #9cb2d6;
+  background-color: #6a7991;
+    color: white;
+  margin-top: 40px;
+}
+#yes-btn{
+  width:100px;
+  height:37px;
+  border-radius: 20px;
+  background-color: white;
+  border: 2px solid #9cb2d6;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.delete_wrap_btns{
+  height:auto;
+  margin-top
+}
+/*여행기 삭제하기 팝업 끝*/
+
+
+/*초대받은 모달 시작*/
+.img_card {
+  position: relative;
+}
+
+.cowork-modal-box {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.43);
+  height: 255px;
+  width: 297px;
+  top: 0;
+}
+
+.request_user {
+  text-align: center;
+  color: white;
+}
+
+.cowork-alias {
+  font-size: 33px;
+}
+
+.cowork-email {
+  
+}
+
+.request_btns {
+  text-align: center;
+  margin-top: 38px;
+}
+
+.cowork-btn {
+  box-shadow: 0px 0px 9px 0px black;
+  display: inline-block;
+  width: 100px;
+  border-radius: 50px;
+  margin-right: 1%;
+  margin-left: 1%;
+  height: 30px;
+  line-height: 30px;
+}
+
+.cowork-btn:hover{
+	cursor: pointer;
+}
+
+.btn_accept {
+  background-color: white;
+}
+
+.btn_reject {
+  background-color: black;
+  color: white;
+}
+/*초대받은 모달 끝*/
+
+.footer-container {
+	margin-top: 50px;
+}

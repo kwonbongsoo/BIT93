@@ -1,0 +1,181 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <style>
+    * {
+      font-size: 30px;
+      text-align: center;
+      font-family: "돋움", dotum, sans-serif;
+    }
+    #p1 {
+
+      width:290px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">과제</div>
+    </div>
+  </footer>
+
+  <div class="demo-list-action mdl-list">
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar"></i>
+      <span id='timeout'>남은 시간</span>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </div>
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar"></i>
+      <div id="p1" class="mdl-progress mdl-js-progress"></div>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </div>
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar"></i>
+      <span id="success">정답 개수</span>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </div>
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar"></i>
+      <span id="fi-word">단어</span>
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </span>
+  </div>
+
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="fi-keyboard">
+          <label class="mdl-textfield__label" rows="1" cols="30"
+          for="sample1">입력</label>
+        </div>
+
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </span>
+  </div>
+  <button class="mdl-button
+   mdl-js-button mdl-button--raised
+    mdl-button--colored" type="button" id="startBtn">시작</button>
+</div>
+
+
+<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+"use strict"
+  window.$ = window.jQuery = require('jquery')
+  var wordService = require('electron').remote.getGlobal('wordService')
+  var fiWord = $('#fi-word'),
+      fiKeyboard = $('#fi-keyboard'),
+      fiSuccess = $('#success'),
+      userInput,
+      list =[0],
+      cnt = 0,
+      startBtn = $('#startBtn'),
+      btnStateMent = 0,
+      no,count,interval2,
+      slider = 0,s
+
+
+      document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+      this.MaterialProgress.setProgress(0);
+      s = this
+      });
+
+      startBtn.click(() => {
+        if(btnStateMent == 0){
+          start()
+        }
+        btnStateMent++;
+      })
+
+
+  $.getJSON('word.json', (result) => {
+
+    console.log(result);
+
+
+
+    no = list.length -1
+    fiWord.text('단어 : '+list[no])
+    count = 20
+    cnt = 0
+    slider = 0
+    fiSuccess.text('맞춘 개수 : '+ cnt)
+
+  })
+
+
+  function start() {
+
+
+
+    fiKeyboard.keyup(() => {
+      if (count > 0) {
+        if (event.keyCode == 13) {
+
+          userInput = fiKeyboard.val()
+          fiKeyboard.val('')
+
+          if (list[no] == userInput) {
+            no--
+            fiSuccess.text('맞춘 개수 : '+ ++cnt)
+            if(no == -1) {
+              return
+            }
+            list.pop()
+            fiWord.text('단어 : '+list[no])
+
+          }
+        }
+      }
+    })
+
+     interval2 = setInterval(function() {
+      if (count == 0 || no == -1) {
+        clearInterval(interval2)
+        btnStateMent = 0
+        $('#timeout').text('끝났어')
+        if (no == -1)
+          swal("클리어!", "클릭하렴!", "success")
+        if (count == 0)
+          sweetAlert("응 너 못했어", "인정해야하는부분이죠", "error")
+        count = 0
+        no = -1
+        return
+      }
+      slider += 5
+      console.log(slider)
+      $('#timeout').text('남은 시간 : '+ count--)
+      s.MaterialProgress.setProgress(slider)
+    }, 1000)
+  }
+
+
+</script>
+</body>
+</html>

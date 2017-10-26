@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<!-- root element -->
+<head>
+<!-- HTML 문서에 대한 설명 -->
+<meta charset="UTF-8">
+
+
+
+
+<meta name="viewport"
+	content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+<title>프로필</title>
+<!-- 웹브라우저 탭 또는 타이틀바에 출력될 제목 -->
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel='stylesheet'
+	href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+<link rel='stylesheet' href='../css/bombee.css'>
+<link rel='stylesheet' href='../css/t-profile.css'>
+<!-- <script src='../node_modules/jquery/dist/jquery.min.js'></script> -->
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
+
+<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+
+<script
+	src="../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script
+	src="../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script
+	src="../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+</head>
+
+
+</head>
+
+<body>
+	<div class="pro-container">
+		<div class="header"></div>
+
+		<div class="profile-container"></div>
+		<div class='save-btn'>SAVE</div>
+		<div class="cont-box1"></div>
+	</div>
+	
+	<script id="profile-template" type="text/x-handlebars-template">
+	{{#this}}
+  <div class="cont-box"></div>
+			<div class='trainer-profile'>
+				<div class='cont-profile'>
+				{{#if tcherpic}}
+					<img id='box1' class='cont-profile-img' src='{{tcherpic}}_190.png'>
+				{{else}}
+					<img id='box1' class='cont-profile-img' src='../image/header-user.png'>
+				{{/if}}
+				</div>
+				<div class='cont-file'>
+					<input id="profile-filess" class='profile-img' type='file'
+						name='files' multiple />
+				</div>
+				<div class='cont-edit'>
+					<i class=' fa fa-camera'></i>
+				</div>
+			</div>
+			<div class='user-name'>{{name}}</div>
+
+			<div class='cont-detail'>
+				<div class='detail-type bottom-line'>
+					<div class='health-name'>운동 종목</div>
+					<div class="pro-type">
+
+						<select id="pro-select" class='health-box'>
+							<option class='spono' id="spono" value="null">꼭!선택하세요</option>
+							<option class='spono' id="spono1" value="1">헬스</option>
+							<option class='spono' id="spono2" value="2">크로스핏</option>
+							<option class='spono' id="spono3" value="3">요가</option>
+							<option class='spono' id="spono4" value="4">필라테스</option>
+						</select>
+					</div>
+				</div>
+				<div class='detail-company-name bottom-line'>
+					<div class='company-name'>근무지 이름</div>
+					<input class='company' type='text' value='{{comname}}'>
+				</div>
+				<div class='detail-company-address bottom-line'>
+					<div class='address-form'>
+						근무지 주소 <i class="fa fa-pencil"
+							onclick="sample2_execDaumPostcode()"></i>
+					</div>
+					<div class='name-zip-code'>우편 번호</div>
+					<input class='zip-code' id="sample2_postcode" type='number'
+						value='{{zipcode}}' readonly>
+					<div class='name-address'>기본 주소</div>
+					<input class='address' id="sample2_address" type='text'
+						value='{{comaddr}}' readonly>
+					<div class='name-address-detail'>상세 주소</div>
+					<input class='address-detail' id="sample2_addressDetail"
+						type='text' value='{{comdetailaddr}}'>
+					<div id="layer">
+						<img id="btnCloseLayer" onclick="closeDaumPostcode()" alt="X">
+					</div>
+				</div>
+				<div class='detail-intro'>
+					<div class='introduce' id="pro-dt">소개</div>
+					<textarea class="Desc introduction" rows="10" id="pro-dd"
+						placeholder='소개글을 적어주세요^^'>{{introduction}}</textarea>
+				</div>
+			</div>
+{{/this}}
+</script>
+	<script type="text/javascript" src="../js/t-profile.js"></script>
+</body>
+</html>

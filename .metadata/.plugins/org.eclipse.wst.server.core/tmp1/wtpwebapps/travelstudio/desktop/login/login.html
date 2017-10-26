@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>header</title>
+<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+
+body {
+	margin: 0;
+}
+
+.header-container {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  height: 120px;
+  box-sizing: border-box;
+}
+
+/*여기서부터 로그인--*/
+.sign-in-container {
+	border: 1px solid white;
+	width: 700px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 72px;
+}
+
+#login-letter {
+	text-align: center;
+	font-size: 33px;
+}
+
+#login-slogan {
+	font-size: 16px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.login-input-box {
+	border: 1px solid white;
+	width: 550px;
+	height: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 80px;
+}
+
+#title-email, #title-password {
+	font-size: 15px;
+	font-weight: bold;
+	color: #6a787c;
+	margin-left: 5px;
+}
+
+#email-input, #password-input {
+	border: 1px solid white;
+	border-bottom: 1px solid gray;
+	width: 100%;
+	height: 40px;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 25px;
+}
+
+/*여기서부터 로그인 버튼 등 */
+.login-button-box {
+	border: 1px solid white;
+	width: 550px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sign-up {
+	border: 2px solid #2d51a3;
+	width: 250px;
+	height: 50px;
+	border-radius: 25px;
+	font-size: 17px;
+	margin-bottom: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	color: white;
+  font-weight: bold;
+  background-color: #2d51a3;
+  float: left;
+}
+
+#login-summit {
+	border: 2px solid #2d51a3;
+	width: 250px;
+	height: 50px;
+	border-radius: 25px;
+	font-size: 17px;
+	margin-bottom: 15px;
+	display: inline-block;
+	color: #666;
+  font-weight: bold;
+  background-color: white;
+  float: right;
+}
+
+.sign-in-container ::-webkit-input-placeholder {
+  color: lightgray;
+  
+}
+
+</style>
+</head>
+<body>
+
+  <div class='header-container'></div>
+
+	<!-- sign in-->
+	<div class="sign-in-container">
+		<p id="login-letter">로그인</p>
+		<p id="login-slogan">Travel Studio에서 나만의 여행기를 만들어보세요!</p>
+		<div class="login-input-box">
+			<p id="title-email">이메일</p>
+			<input id="email-input" placeholder="이메일">
+			<p id="title-password">비밀번호</p>
+			<input type="password" id="password-input" placeholder="비밀번호">
+		</div>
+
+		<div class="login-button-box">
+			<button type="button" id="sign-up">회원가입</button>
+			<button type="button" id="login-summit">로그인</button>
+  	</div>
+	</div>
+
+  <div class='footer-container'></div>
+
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="/js/login/login.js"></script>
+</body>
+</html>
